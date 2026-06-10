@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SI Analytics | Python Joining Datasets Cheat Sheet</title>
+<style>
+:root{
+  --navy:#0F172A;--teal:#0F766E;--gold:#FACC15;--soft-teal:#ECFDF5;--soft-gold:#FEF9C3;
+  --slate:#64748B;--rose:#BE123C;--green:#15803D;--ink:#1E293B;--zoom:1
+}
+*{box-sizing:border-box}
+html{background:#E2E8F0;scroll-behavior:smooth}
+body{margin:0;background:#E2E8F0;color:var(--ink);font-family:Inter,Arial,Helvetica,sans-serif;line-height:1.34}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+.toolbar{position:sticky;top:0;z-index:10;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:12px 18px;background:var(--navy);color:#fff;box-shadow:0 8px 20px rgba(15,23,42,.22)}
+.toolbar .instruction{flex:1 1 420px;font-size:13px;color:#E2E8F0}
+.toolbar .actions{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+.toolbar button{border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#fff;border-radius:8px;padding:8px 10px;font-size:12px;font-weight:800}
+.toolbar button:hover,.toolbar button:focus-visible{background:rgba(255,255,255,.18)}
+.toolbar .primary{background:var(--teal);border-color:#5EEAD4}
+.zoom-readout,.progress-readout{font-size:12px;color:#F8FAFC;border:1px solid rgba(255,255,255,.18);border-radius:8px;padding:8px 10px;background:rgba(255,255,255,.06);white-space:nowrap}
+.progress-shell{width:110px;height:7px;border-radius:999px;background:rgba(255,255,255,.16);overflow:hidden}
+.progress-bar{height:100%;width:0;background:var(--gold);transition:width .2s ease}
+.sheet-stage{overflow:auto;padding:22px 0 48px}
+.sheet-wrap{transform:scale(var(--zoom));transform-origin:top center;width:calc(100% / var(--zoom))}
+.page{position:relative;width:min(210mm,calc(100vw - 24px));min-height:297mm;margin:0 auto 20px;padding:12mm 12mm 16mm;background:#fff;box-shadow:0 12px 28px rgba(15,23,42,.16);overflow:hidden}
+.page::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,var(--navy) 0 58%,var(--teal) 58% 88%,var(--gold) 88%)}
+.page-header{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:8px}
+.brand{display:flex;align-items:center;gap:9px;min-width:142px}
+.brand img{width:112px;max-height:42px;object-fit:contain}
+.brand-fallback{display:none;font-size:13px;letter-spacing:.14em;color:var(--navy);font-weight:900}
+.page-kicker{font-size:9px;letter-spacing:.16em;text-transform:uppercase;font-weight:900;color:var(--teal);margin-bottom:3px}
+h1{margin:0 0 4px;color:var(--navy);font-size:20px;line-height:1.1;letter-spacing:-.03em}
+.subtitle{margin:0;color:var(--slate);font-size:11px}
+.page-number{font-size:9px;color:var(--slate);white-space:nowrap;margin-top:3px}
+.intro-strip{display:grid;grid-template-columns:1.45fr 1fr;gap:8px;padding:8px 9px;border:1px solid #99F6E4;background:linear-gradient(90deg,var(--soft-teal),#fff);border-radius:10px;margin:7px 0 9px;font-size:9.2px}
+.intro-strip strong{color:var(--navy)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.stack{display:grid;gap:7px}
+.card{break-inside:avoid;border:1px solid #D8E0E8;border-radius:10px;padding:8px;background:#fff}
+.card.soft{background:#F8FAFC}.card.teal{background:var(--soft-teal);border-color:#A7F3D0}.card.gold{background:#FFFBEB;border-color:#FDE68A}
+.card-title{display:flex;gap:7px;align-items:center;margin:0 0 5px;color:var(--navy);font-size:10.2px;text-transform:uppercase;letter-spacing:.07em;font-weight:900}
+.badge{display:inline-grid;place-items:center;width:18px;height:18px;flex:0 0 18px;border-radius:50%;background:var(--teal);color:#fff;font-size:9px}
+p{font-size:9.4px;margin:4px 0}.mini{font-size:8.5px;color:var(--slate);margin:3px 0}
+pre{white-space:pre-wrap;margin:5px 0;padding:6px 7px;border-radius:7px;background:#0B1220;color:#E2E8F0;font:8.05px/1.4 "SFMono-Regular",Consolas,monospace;border-left:3px solid var(--teal)}
+code{font-family:"SFMono-Regular",Consolas,monospace;color:#0F766E;font-size:.96em}
+.question{margin-top:5px;padding-top:5px;border-top:1px dashed #CBD5E1}
+.question:first-of-type{border-top:0;padding-top:0}
+.prompt{display:block;margin-bottom:4px;color:#334155;font-size:9.2px;font-weight:700}
+input.response,textarea.response,select.response{width:100%;border:1px solid #AAB8C7;border-radius:6px;padding:5px 6px;background:#fff;color:var(--navy);font-size:9px;outline:none}
+textarea.response{resize:vertical;min-height:39px;font-family:"SFMono-Regular",Consolas,monospace;line-height:1.3}
+input.response:focus,textarea.response:focus,select.response:focus,button:focus-visible{outline:3px solid rgba(250,204,21,.55);outline-offset:1px}
+.response.correct{border-color:var(--green);background:#F0FDF4}.response.incorrect{border-color:var(--rose);background:#FFF1F2}
+.hint{display:block;margin-top:3px;color:var(--slate);font-size:8.2px}.hint.hidden{display:none}
+.feedback{display:none;margin-top:4px;font-size:8.4px;line-height:1.25}.feedback.show{display:block}.feedback.good{color:var(--green)}.feedback.bad{color:var(--rose)}
+.choice-group{display:flex;flex-wrap:wrap;gap:5px;margin-top:3px}
+.choice-group button{border:1px solid #CBD5E1;color:#334155;background:#fff;border-radius:999px;padding:4px 7px;font-size:8.6px;font-weight:800}
+.choice-group button:hover{border-color:var(--teal)}.choice-group button.selected{border-color:var(--navy);background:#E2E8F0}.choice-group button.correct-choice{border-color:var(--green);background:#DCFCE7;color:#166534}.choice-group button.wrong-choice{border-color:var(--rose);background:#FFE4E6;color:#9F1239}
+table{width:100%;border-collapse:collapse;font-size:8.45px}th,td{border:1px solid #D8E0E8;padding:4px 5px;text-align:left;vertical-align:top}th{background:#F1F5F9;color:var(--navy)}
+.callout{margin-top:5px;padding:5px 7px;border-left:3px solid var(--gold);background:var(--soft-gold);font-size:8.4px}
+.footer{position:absolute;left:12mm;right:12mm;bottom:5mm;padding-top:4px;border-top:1px solid #CBD5E1;color:var(--slate);font-size:8px;text-align:center;letter-spacing:.03em}
+@media(max-width:760px){.page{width:calc(100vw - 12px);padding:10mm 8mm 15mm}.grid-2,.grid-3,.intro-strip{grid-template-columns:1fr}.footer{left:8mm;right:8mm}h1{font-size:18px}}
+@page{size:A4 portrait;margin:0}
+@media print{
+  html,body{background:#fff}.toolbar{display:none!important}.sheet-stage{padding:0;overflow:visible}.sheet-wrap{transform:none!important;width:100%!important}
+  .page{width:210mm;height:297mm;min-height:297mm;margin:0;padding:9mm 10mm 14mm;box-shadow:none;page-break-after:always;break-after:page}
+  .page:last-child{page-break-after:auto;break-after:auto}.footer{left:10mm;right:10mm;bottom:4mm}
+  .page-header{margin-bottom:5px}.intro-strip{margin:5px 0 6px;padding:5px 7px}.grid-2,.stack{gap:5px}
+  .card{padding:5px 6px;border-radius:7px}.card-title{font-size:8.7px;margin-bottom:3px}.badge{width:15px;height:15px;flex-basis:15px;font-size:7px}
+  h1{font-size:17px}p,.prompt{font-size:7.8px}.mini,.hint,.feedback,.choice-group button,.callout,table{font-size:7px}
+  pre{font-size:6.75px;padding:4px 5px;margin:3px 0}input.response,textarea.response,select.response{font-size:7.4px;padding:3px 4px}textarea.response{min-height:28px}.question{margin-top:3px;padding-top:3px}
+}
+</style>
+</head>
+<body>
+<aside class="toolbar" aria-label="Cheat sheet controls">
+  <div class="instruction">Complete the activities, check your understanding, and save your completed sheet as a PDF.</div>
+  <div class="actions">
+    <button type="button" id="zoomOut" aria-label="Zoom out">−</button>
+    <span class="zoom-readout" id="zoomReadout">100%</span>
+    <button type="button" id="zoomIn" aria-label="Zoom in">+</button>
+    <button type="button" id="toggleHints">Hide hints</button>
+    <button type="button" id="clearAnswers">Clear answers</button>
+    <button type="button" class="primary" id="printSheet">Print or Save PDF</button>
+    <span class="progress-readout" id="progressReadout">0 of 36 completed</span>
+    <span class="progress-shell"><span class="progress-bar" id="progressBar"></span></span>
+  </div>
+</aside>
+
+<main class="sheet-stage"><div class="sheet-wrap">
+
+<!-- PAGE 1 -->
+<section class="page" aria-labelledby="p1">
+<header class="page-header">
+  <div><div class="page-kicker">SI Analytics • Python data wrangling</div><h1 id="p1">Python Cheat Sheet: Joining DataFrames</h1><p class="subtitle">Combining related datasets safely with pandas merge()</p></div>
+  <div><div class="brand"><img src="https://raw.githubusercontent.com/SIAnalyticsLab/si-analytics-academy/main/assets/logo.png" alt="SI Analytics logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="brand-fallback">SI ANALYTICS</span></div><div class="page-number">PAGE 01 / 03</div></div>
+</header>
+<div class="intro-strip"><div><strong>Purpose.</strong> Use <code>pd.merge()</code> to combine information about the same entities across datasets without relying on row order.</div><div><strong>Core pattern.</strong> <code>pd.merge(left, right, on="key", how="left")</code></div></div>
+
+<div class="grid-2">
+<div class="stack">
+<article class="card teal">
+<h2 class="card-title"><span class="badge">A</span> Why joins matter</h2>
+<pre>people
+# name     age
+# Alice     25
+# Bob       32
+# Charlie   45
+
+test_info
+# name     test_date    result
+# Alice    2023-06-05   Negative
+# Bob      2023-08-10   Positive
+# Charlie  2023-07-15   Negative</pre>
+<div class="question"><span class="prompt">1. “Joining combines information about related entities across datasets.”</span><div class="choice-group" data-item="q1" data-answer="correct" data-explain="A join connects related rows using one or more key columns."><button type="button" data-choice="correct">Correct</button><button type="button" data-choice="misconception">Misconception</button></div><span class="feedback"></span></div>
+<div class="question"><label class="prompt" for="q2">2. Which pandas function performs joins?</label><input class="response" id="q2" data-item="q2" data-answer="pd.merge()" data-alt="pd.merge||merge()" data-hint-options="pd.merge()|pd.concat()|pivot()|melt()"><span class="hint"></span><span class="feedback"></span></div>
+<div class="question"><span class="prompt">3. “A join should connect records by a meaningful identifier, not merely by row position.”</span><div class="choice-group" data-item="q3" data-answer="correct" data-explain="Keys protect against misalignment when rows are ordered differently."><button type="button" data-choice="correct">Correct</button><button type="button" data-choice="misconception">Misconception</button></div><span class="feedback"></span></div>
+</article>
+
+<article class="card gold">
+<h2 class="card-title"><span class="badge">B</span> Why concat can be unsafe</h2>
+<pre>pd.concat([people, test_info_disordered], axis=1)</pre>
+<div class="question"><span class="prompt">4. “Horizontal concatenation can silently misalign records when row order differs.”</span><div class="choice-group" data-item="q4" data-answer="correct" data-explain="concat(axis=1) pastes columns side by side according to index position, not entity identity."><button type="button" data-choice="correct">Correct</button><button type="button" data-choice="misconception">Misconception</button></div><span class="feedback"></span></div>
+<div class="question"><label class="prompt" for="q5">5. Which argument makes <code>pd.concat()</code> combine columns horizontally?</label><input class="response" id="q5" data-item="q5" data-answer="axis=1" data-alt="axis = 1" data-hint-options="axis=1|axis=0|how='left'|on='name'"><span class="hint"></span><span class="feedback"></span></div>
+<div class="question"><span class="prompt">6. “A one-to-many relationship can produce more rows after a merge.”</span><div class="choice-group" data-item="q6" data-answer="correct" data-explain="If Alice appears once on the left and twice on the right, her left-side details are repeated for both matches."><button type="button" data-choice="correct">Correct</button><button type="button" data-choice="misconception">Misconception</button></div><span class="feedback"></span></div>
+</article>
+</div>
+
+<div class="stack">
+<article class="card">
+<h2 class="card-title"><span class="badge">C</span> Basic merge syntax</h2>
+<pre>pd.merge(people, test_info, on="name")
+
+pd.merge(
+  left=people,
+  right=test_info,
+  on="name"
+)</pre>
+<div class="question"><label class="prompt" for="q7">7. What are the first two DataFrame arguments called?</label><input class="response" id="q7" data-item="q7" data-answer="left and right" data-alt="left, right||left/right" data-hint-options="left and right|x and y|index and columns|id_vars and values"><span class="hint"></span><span class="feedback"></span></div>
+<div class="question"><label class="prompt" for="q8">8. What is the column used to match records called?</label><input class="response" id="q8" data-item="q8" data-answer="key" data-alt="join key||joining key" data-hint-options="key|index|axis|pivot"><span class="hint"></span><span class="feedback"></span></div>
+<div class="question"><label class="prompt" for="q9">9. Which argument specifies a common join key?</label><input class="response" id="q9" data-item="q9" data-answer="on" data-alt="on =" data-hint-options="on|left_on|right_on|how"><span class="hint"></span><span class="feedback"></span></div>
+<div class="question"><label class="prompt" for="q10">10. Join <code>employees</code> and <code>training_sessions</code> by <code>employee_id</code>.</label><textarea class="response" id="q10" data-item="q10" data-mode="code" data-answer='pd.merge(employees, training_sessions, on="employee_id")' data-alt="pd.merge(employees,training_sessions,on='employee_id')"></textarea><span class="hint">Hint options: use <code>pd.merge()</code> and <code>on="employee_id"</code>.</span><span class="feedback"></span></div>
+</article>
+
+<article class="card teal">
+<h2 class="card-title"><span class="badge">D</span> Different key names</h2>
+<pre>pd.merge(
+  people,
+  test_info_different_name,
+  left_on="name",
+  right_on="first_name"
+)</pre>
+<div class="question"><label class="prompt" for="q11">11. Which argument names the left-side key?</label><input class="response" id="q11" data-item="q11" data-answer="left_on" data-alt="left_on =" data-hint-options="left_on|right_on|on|how"><span class="hint"></span><span class="feedback"></span></div>
+<div class="question"><label class="prompt" for="q12">12. Which argument names the right-side key?</label><input class="response" id="q12" data-item="q12" data-answer="right_on" data-alt="right_on =" data-hint-options="right_on|left_on|on|axis"><span class="hint"></span><span class="feedback"></span></div>
+<div class="question"><label class="prompt" for="q13">13. Join <code>customer_details</code> and <code>order_records</code> using their differently named keys.</label><textarea class="response" id="q13" data-item="q13" data-mode="code" data-answer='pd.merge(customer_details, order_records, left_on="id_number", right_on="customer_code")' data-alt="pd.merge(customer_details,order_records,left_on='id_number',right_on='customer_code')"></textarea><span class="hint">Hint options: map <code>id_number</code> to <code>customer_code</code>.</span><span class="feedback"></span></div>
+</article>
+
+<article class="card soft">
+<h2 class="card-title"><span class="badge">E</span> Rapid reference</h2>
+<table>
+<tr><th>Need</th><th>Use</th></tr>
+<tr><td>Merge DataFrames</td><td><code>pd.merge(left, right)</code></td></tr>
+<tr><td>Common key name</td><td><code>on="key"</code></td></tr>
+<tr><td>Different key names</td><td><code>left_on="..."</code>, <code>right_on="..."</code></td></tr>
+<tr><td>Choose join type</td><td><code>how="left"</code>, <code>"right"</code>, <code>"inner"</code>, or <code>"outer"</code></td></tr>
+</table>
+</article>
+</div>
+</div>
+<footer class="footer">SI Analytics | Learn. Apply. Transform. | www.sianalytics.org</footer>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page" aria-labelledby="p2">
+<header class="page-header">
+  <div><div class="page-kicker">SI Analytics • Python data wrangling</div><h1 id="p2">Python Cheat Sheet: Join Types</h1><p class="subtitle">Choosing the correct merge strategy for imperfect matches</p></div>
+  <div><div class="brand"><img src="https://raw.githubusercontent.com/SIAnalyticsLab/si-analytics-academy/main/assets/logo.png" alt="SI Analytics logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="brand-fallback">SI ANALYTICS</span></div><div class="page-number">PAGE 02 / 03</div></div>
+</header>
+<div class="intro-strip"><div><strong>Purpose.</strong> Use the <code>how</code> argument to control which unmatched records are retained after a merge.</div><div><strong>Core distinction.</strong> Left and right joins prioritise one table. Inner joins retain matches. Outer joins retain everything.</div></div>
+
+<div class="grid-2">
+<div class="stack">
+<article class="card teal">
+<h2 class="card-title"><span class="badge">A</span> Left join</h2>
+<pre>pd.merge(
+  people,
+  test_info_xavier,
+  on="name",
+  how="left"
+)</pre>
+<div class="question"><label class="prompt" for="q14">14. Which argument selects the join type?</label><input class="response" id="q14" data-item="q14" data-answer="how" data-alt="how =" data-hint-options="how|on|left_on|axis"><span class="hint"></span><span class="feedback"></span></div>
+<div class="question"><span class="prompt">15. “A left join retains every row from the left DataFrame.”</span><div class="choice-group" data-item="q15" data-answer="correct" data-explain="Unmatched right-side fields become NaN."><button type="button" data-choice="correct">Correct</button><button type="button" data-choice="misconception">Misconception</button></div><span class="feedback"></span></div>
+<div class="question"><label class="prompt" for="q16">16. Join <code>students</code> and <code>exam_dates</code>, keeping all students.</label><textarea class="response" id="q16" data-item="q16" data-mode="code" data-answer='pd.merge(students, exam_dates, on="student_id", how="left")' data-alt="pd.merge(students,exam_dates,on='student_id',how='left')"></textarea><span class="hint">Hint options: place <code>students</code> on the left and use <code>how="left"</code>.</span><span class="feedback"></span></div>
+</article>
+
+<article class="card gold">
+<h2 class="card-title"><span class="badge">B</span> Right join</h2>
+<pre>pd.merge(
+  test_info_xavier,
+  people,
+  on="name",
+  how="right"
+)</pre>
+<div class="question"><span class="prompt">17. “A right join retains every row from the right DataFrame.”</span><div class="choice-group" data-item="q17" data-answer="correct" data-explain="Right join mirrors left join logic."><button type="button" data-choice="correct">Correct</button><button type="button" data-choice="misconception">Misconception</button></div><span class="feedback"></span></div>
+<div class="question"><span class="prompt">18. “A left join is often easier to reason about because the primary dataset appears first.”</span><div class="choice-group" data-item="q18" data-answer="correct" data-explain="This is why analysts commonly favour left joins."><button type="button" data-choice="correct">Correct</button><button type="button" data-choice="misconception">Misconception</button></div><span class="feedback"></span></div>
+</article>
+
+<article class="card">
+<h2 class="card-title"><span class="badge">C</span> Inner join</h2>
+<pre>pd.merge(
+  people,
+  test_info_xavier,
+  on="name",
+  how="inner"
+)</pre>
+<div class="question"><span class="prompt">19. “An inner join retains only keys present in both DataFrames.”</span><div class="choice-group" data-item="q19" data-answer="correct" data-explain="Unmatched keys from either side are excluded."><button type="button" data-choice="correct">Correct</button><button type="button" data-choice="misconception">Misconception</button></div><span class="feedback"></span></div>
+<div class="question"><label class="prompt" for="q20">20. What is the default <code>pd.merge()</code> join type?</label><input class="response" id="q20" data-item="q20" data-answer="inner" data-alt="inner join||how='inner'" data-hint-options="inner|left|right|outer"><span class="hint"></span><span class="feedback"></span></div>
+<div class="question"><label class="prompt" for="q21">21. Keep products present in both <code>total_sales</code> and <code>product_feedback</code>.</label><textarea class="response" id="q21" data-item="q21" data-mode="code" data-answer='pd.merge(total_sales, product_feedback, on="product", how="inner")' data-alt="pd.merge(total_sales,product_feedback,on='product',how='inner')||pd.merge(total_sales,product_feedback,on='product')"></textarea><span class="hint">Hint options: use <code>on="product"</code> and an inner join.</span><span class="feedback"></span></div>
+</article>
+</div>
+
+<div class="stack">
+<article class="card teal">
+<h2 class="card-title"><span class="badge">D</span> Outer join</h2>
+<pre>pd.merge(
+  people,
+  test_info_xavier,
+  on="name",
+  how="outer"
+)</pre>
+<div class="question"><span class="prompt">22. “An outer join retains all keys from both DataFrames.”</span><div class="choice-group" data-item="q22" data-answer="correct" data-explain="Where a match is absent, the missing side is filled with NaN values."><button type="button" data-choice="correct">Correct</button><button type="button" data-choice="misconception">Misconception</button></div><span class="feedback"></span></div>
+<div class="question"><label class="prompt" for="q23">23. Retain all years from <code>sales</code> and <code>customer_complaints</code>.</label><textarea class="response" id="q23" data-item="q23" data-mode="code" data-answer='pd.merge(sales, customer_complaints, on="year", how="outer")' data-alt="pd.merge(sales,customer_complaints,on='year',how='outer')"></textarea><span class="hint">Hint options: use an outer join on <code>year</code>.</span><span class="feedback"></span></div>
+</article>
+
+<article class="card soft">
+<h2 class="card-title"><span class="badge">E</span> Join-type reference</h2>
+<table>
+<tr><th>Join</th><th>Rows retained</th></tr>
+<tr><td><code>how="left"</code></td><td>All keys from the left DataFrame</td></tr>
+<tr><td><code>how="right"</code></td><td>All keys from the right DataFrame</td></tr>
+<tr><td><code>how="inner"</code></td><td>Only keys present in both DataFrames</td></tr>
+<tr><td><code>how="outer"</code></td><td>All keys from both DataFrames</td></tr>
+</table>
+</article>
+
+<article class="card gold">
+<h2 class="card-title"><span class="badge">F</span> Choose the correct join</h2>
+<div class="question"><span class="prompt">24. Keep every record from your primary dataset, even when a match is absent.</span><div class="choice-group" data-item="q24" data-answer="left"><button type="button" data-choice="left">left</button><button type="button" data-choice="inner">inner</button><button type="button" data-choice="outer">outer</button></div><span class="feedback"></span></div>
+<div class="question"><span class="prompt">25. Keep only records represented in both datasets.</span><div class="choice-group" data-item="q25" data-answer="inner"><button type="button" data-choice="left">left</button><button type="button" data-choice="inner">inner</button><button type="button" data-choice="outer">outer</button></div><span class="feedback"></span></div>
+<div class="question"><span class="prompt">26. Retain all records from both datasets.</span><div class="choice-group" data-item="q26" data-answer="outer"><button type="button" data-choice="left">left</button><button type="button" data-choice="inner">inner</button><button type="button" data-choice="outer">outer</button></div><span class="feedback"></span></div>
+</article>
+</div>
+</div>
+<footer class="footer">SI Analytics | Learn. Apply. Transform. | www.sianalytics.org</footer>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page" aria-labelledby="p3">
+<header class="page-header">
+  <div><div class="page-kicker">SI Analytics • Python data wrangling</div><h1 id="p3">Python Cheat Sheet: Applied Join Practice</h1><p class="subtitle">Choosing primary datasets, handling missing matches, and checking outputs</p></div>
+  <div><div class="brand"><img src="https://raw.githubusercontent.com/SIAnalyticsLab/si-analytics-academy/main/assets/logo.png" alt="SI Analytics logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="brand-fallback">SI ANALYTICS</span></div><div class="page-number">PAGE 03 / 03</div></div>
+</header>
+<div class="intro-strip"><div><strong>Purpose.</strong> Apply merge logic to realistic datasets and verify whether the output preserves the intended population.</div><div><strong>Reminder.</strong> Before merging, identify the primary table, the key, and the expected treatment of unmatched records.</div></div>
+
+<div class="grid-2">
+<div class="stack">
+<article class="card teal">
+<h2 class="card-title"><span class="badge">A</span> African TB analysis</h2>
+<pre>tb_health_exp_joined = pd.merge(
+  tb_2019_africa,
+  health_exp_2019,
+  on="country",
+  how="left"
+)</pre>
+<div class="question"><span class="prompt">27. Which DataFrame should be on the left when analysing African countries?</span><div class="choice-group" data-item="q27" data-answer="tb"><button type="button" data-choice="tb">tb_2019_africa</button><button type="button" data-choice="health">health_exp_2019</button><button type="button" data-choice="either">Either, it never matters</button></div><span class="feedback"></span></div>
+<div class="question"><span class="prompt">28. “A left join preserves African countries even when health-expenditure values are missing.”</span><div class="choice-group" data-item="q28" data-answer="correct" data-explain="Missing expenditure values become NaN, but the left-side countries remain in the output."><button type="button" data-choice="correct">Correct</button><button type="button" data-choice="misconception">Misconception</button></div><span class="feedback"></span></div>
+<div class="question"><label class="prompt" for="q29">29. Filter the joined dataset to rows with missing expenditure values.</label><input class="response" id="q29" data-item="q29" data-mode="code" data-answer='tb_health_exp_joined.query("expend_usd.isna()")' data-alt="tb_health_exp_joined[tb_health_exp_joined['expend_usd'].isna()]"></input><span class="hint">Hint options: use <code>query("expend_usd.isna()")</code> or Boolean indexing.</span><span class="feedback"></span></div>
+</article>
+
+<article class="card gold">
+<h2 class="card-title"><span class="badge">B</span> Join TB cases to continents</h2>
+<div class="question"><label class="prompt" for="q30">30. Add continent and region to <code>tb_cases_children</code>. Keys: <code>country</code> and <code>country.name.en</code>.</label><textarea class="response" id="q30" data-item="q30" data-mode="code" data-answer='pd.merge(tb_cases_children, country_continents, left_on="country", right_on="country.name.en", how="left")' data-alt="pd.merge(tb_cases_children,country_continents,left_on='country',right_on='country.name.en',how='left')"></textarea><span class="hint">Hint options: keep <code>tb_cases_children</code> on the left.</span><span class="feedback"></span></div>
+<div class="question"><span class="prompt">31. “The TB-cases table is the primary dataset because the goal is to enrich its records.”</span><div class="choice-group" data-item="q31" data-answer="correct" data-explain="The left table should represent the population you intend to preserve."><button type="button" data-choice="correct">Correct</button><button type="button" data-choice="misconception">Misconception</button></div><span class="feedback"></span></div>
+</article>
+</div>
+
+<div class="stack">
+<article class="card">
+<h2 class="card-title"><span class="badge">C</span> Validate your output</h2>
+<div class="question"><span class="prompt">32. “Row counts can increase after a valid merge when one key matches multiple rows.”</span><div class="choice-group" data-item="q32" data-answer="correct" data-explain="This is expected in a one-to-many relationship."><button type="button" data-choice="correct">Correct</button><button type="button" data-choice="misconception">Misconception</button></div><span class="feedback"></span></div>
+<div class="question"><span class="prompt">33. Which check is most useful immediately after a merge?</span><div class="choice-group" data-item="q33" data-answer="shape"><button type="button" data-choice="shape">Inspect row counts, keys, and missing values</button><button type="button" data-choice="none">Assume the merge is correct</button><button type="button" data-choice="plot">Always make a plot first</button></div><span class="feedback"></span></div>
+<div class="question"><span class="prompt">34. “Unexpected <code>NaN</code> values can indicate unmatched keys.”</span><div class="choice-group" data-item="q34" data-answer="correct" data-explain="Missing values may be expected, but they should be reviewed."><button type="button" data-choice="correct">Correct</button><button type="button" data-choice="misconception">Misconception</button></div><span class="feedback"></span></div>
+</article>
+
+<article class="card teal">
+<h2 class="card-title"><span class="badge">D</span> Final synthesis</h2>
+<div class="question"><label class="prompt" for="q35">35. Join product sales and feedback, keeping only common products.</label><input class="response" id="q35" data-item="q35" data-mode="code" data-answer='pd.merge(total_sales, product_feedback, on="product", how="inner")' data-alt="pd.merge(total_sales,product_feedback,on='product',how='inner')"></input><span class="hint">Hint options: use an inner merge on <code>product</code>.</span><span class="feedback"></span></div>
+<div class="question"><label class="prompt" for="q36">36. Join annual sales and complaints, retaining every year from both tables.</label><input class="response" id="q36" data-item="q36" data-mode="code" data-answer='pd.merge(sales, customer_complaints, on="year", how="outer")' data-alt="pd.merge(sales,customer_complaints,on='year',how='outer')"></input><span class="hint">Hint options: use an outer merge on <code>year</code>.</span><span class="feedback"></span></div>
+</article>
+
+<article class="card soft">
+<h2 class="card-title"><span class="badge">E</span> Final readiness check</h2>
+<table>
+<tr><th>Question</th><th>Ask yourself</th></tr>
+<tr><td>Primary population</td><td>Which table's rows must be preserved?</td></tr>
+<tr><td>Key</td><td>Do both tables use the same key name?</td></tr>
+<tr><td>Join mode</td><td>Do I need left, right, inner, or outer behaviour?</td></tr>
+<tr><td>Validation</td><td>Did row counts or missing values change as expected?</td></tr>
+</table>
+<div class="callout"><strong>Workshop readiness:</strong> revisit any rose-coloured response, then print or save your completed sheet as a PDF.</div>
+</article>
+</div>
+</div>
+<footer class="footer">SI Analytics | Learn. Apply. Transform. | www.sianalytics.org</footer>
+</section>
+
+</div></main>
+
+<script>
+(() => {
+const STORAGE_KEY="siAnalyticsPythonJoiningV1", SETTINGS_KEY="siAnalyticsPythonJoiningSettingsV1";
+const responses=[...document.querySelectorAll(".response")],groups=[...document.querySelectorAll(".choice-group")],hints=[...document.querySelectorAll(".hint")];
+const items=[...responses.filter(x=>x.dataset.item),...groups.filter(x=>x.dataset.item)];
+let zoom=1,hintsVisible=true;
+const norm=(v,mode="")=>{let x=(v||"").trim().toLowerCase().replace(/[“”]/g,'"').replace(/[‘’]/g,"'").replace(/\r/g,"");return mode==="code"?x.replace(/\s+/g,"").replace(/;/g,""):x.replace(/\s+/g," ")};
+const alts=el=>[el.dataset.answer||"",...(el.dataset.alt?el.dataset.alt.split("||"):[])].map(x=>norm(x,el.dataset.mode));
+const feedback=(el,ok,msg="")=>{const f=el.parentElement.querySelector(".feedback")||el.nextElementSibling?.nextElementSibling;if(el.classList.contains("response")){el.classList.toggle("correct",ok);el.classList.toggle("incorrect",!ok)}if(f){f.className=`feedback show ${ok?"good":"bad"}`;f.textContent=msg||(ok?"Correct.":"Review this item and try again.")}};
+const validate=el=>{if(!el.value.trim()){el.classList.remove("correct","incorrect");const f=el.parentElement.querySelector(".feedback");if(f){f.className="feedback";f.textContent=""}return false}const ok=alts(el).includes(norm(el.value,el.dataset.mode));feedback(el,ok);return ok};
+const progress=()=>{const done=items.filter(x=>x.classList.contains("response")?!!x.value.trim():!!x.dataset.selected).length,pct=Math.round(done/items.length*100);document.getElementById("progressReadout").textContent=`${done} of ${items.length} completed • ${pct}%`;document.getElementById("progressBar").style.width=`${pct}%`};
+const save=()=>{const state={};responses.forEach(x=>state[x.id]=x.value);groups.forEach((g,i)=>state[g.dataset.item||`g${i}`]=g.dataset.selected||"");localStorage.setItem(STORAGE_KEY,JSON.stringify(state));localStorage.setItem(SETTINGS_KEY,JSON.stringify({zoom,hintsVisible}));progress()};
+const pick=(g,c)=>{g.dataset.selected=c;const ok=c===g.dataset.answer;g.querySelectorAll("button").forEach(b=>{b.classList.remove("selected","correct-choice","wrong-choice");if(b.dataset.choice===c)b.classList.add("selected",ok?"correct-choice":"wrong-choice")});const f=g.parentElement.querySelector(".feedback")||g.nextElementSibling;if(f){f.className=`feedback show ${ok?"good":"bad"}`;f.textContent=ok?"Correct.":(g.dataset.explain||"Review this concept and try again.")}save()};
+const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+responses.forEach(el=>{const h=el.parentElement.querySelector(".hint")||el.nextElementSibling;if(h&&el.dataset.hintOptions)h.textContent=`Hint options: ${shuffle(el.dataset.hintOptions.split("|")).join("  •  ")}`;el.addEventListener("blur",()=>{validate(el);save()});el.addEventListener("input",save);el.addEventListener("change",()=>{validate(el);save()})});
+groups.forEach(g=>g.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>pick(g,b.dataset.choice))));
+const applyZoom=()=>{document.documentElement.style.setProperty("--zoom",zoom);document.getElementById("zoomReadout").textContent=`${Math.round(zoom*100)}%`};
+const applyHints=()=>{hints.forEach(h=>h.classList.toggle("hidden",!hintsVisible));document.getElementById("toggleHints").textContent=hintsVisible?"Hide hints":"Show hints"};
+document.getElementById("zoomOut").onclick=()=>{zoom=Math.max(.7,+(zoom-.1).toFixed(1));applyZoom();save()};
+document.getElementById("zoomIn").onclick=()=>{zoom=Math.min(1.3,+(zoom+.1).toFixed(1));applyZoom();save()};
+document.getElementById("toggleHints").onclick=()=>{hintsVisible=!hintsVisible;applyHints();save()};
+document.getElementById("printSheet").onclick=()=>window.print();
+document.getElementById("clearAnswers").onclick=()=>{if(!confirm("Clear all saved responses from this browser?"))return;localStorage.removeItem(STORAGE_KEY);responses.forEach(x=>{x.value="";x.classList.remove("correct","incorrect");const f=x.parentElement.querySelector(".feedback");if(f){f.className="feedback";f.textContent=""}});groups.forEach(g=>{delete g.dataset.selected;g.querySelectorAll("button").forEach(b=>b.classList.remove("selected","correct-choice","wrong-choice"));const f=g.parentElement.querySelector(".feedback")||g.nextElementSibling;if(f){f.className="feedback";f.textContent=""}});progress()};
+const restore=()=>{const state=JSON.parse(localStorage.getItem(STORAGE_KEY)||"{}");responses.forEach(x=>{if(state[x.id]!==undefined){x.value=state[x.id];if(x.value.trim())validate(x)}});groups.forEach((g,i)=>{const k=g.dataset.item||`g${i}`;if(state[k])pick(g,state[k])});const s=JSON.parse(localStorage.getItem(SETTINGS_KEY)||"{}");zoom=s.zoom||1;hintsVisible=s.hintsVisible!==false;applyZoom();applyHints();progress()};
+restore();
+})();
+</script>
+</body>
+</html>
