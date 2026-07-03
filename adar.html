@@ -16,7 +16,7 @@
     [EARLY BIRD OFFER]  48 hours (offer duration; no fixed timestamp supplied)
     [DISCOUNT]          30% (early-bird / group enrolments and partial scholarship)
     [REG DEADLINE]      14 July 2026
-    [ENROLMENT URL]     https://www.sianalytics.org/
+    [ENROLMENT URL]     https://selar.com/o5732q3117
     [SCHOLARSHIP URL]   https://docs.google.com/forms/d/1XzQIh4__Eh3qI3Z6Gj-0kyGeUiNXSxJwhoUO5noNC2Y/preview
     [CONTACT EMAIL]     contact@sianalytics.org
     [WEBSITE URL]       https://www.sianalytics.org/
@@ -31,8 +31,8 @@
   ---------------------------------------------------------------------------------
   TRANSPARENT ASSUMPTIONS (per brief):
    - Course year is 2026.
-   - Enrolment links to the SI Analytics homepage because no dedicated checkout
-     or registration URL was supplied. No fake payment form is included.
+   - Enrolment buttons link to the SI Analytics Selar checkout
+     (https://selar.com/o5732q3117). No fake payment form is included.
    - "Early Bird: 48 hours" is presented as an offer lasting 48 hours. No
      per-visitor countdown is generated, because no verified start/expiry exists.
    - Facebook is shown as plain text (no URL invented).
@@ -110,7 +110,7 @@
         "@type": "Offer",
         "price": "150",
         "priceCurrency": "USD",
-        "url": "https://www.sianalytics.org/",
+        "url": "https://selar.com/o5732q3117",
         "availability": "https://schema.org/InStock"
       }
     }
@@ -422,8 +422,13 @@
      ===================================================================== */
   .sia-hero {
     position: relative;
+    /* Layered overlay: a full vertical scrim keeps text legible over the
+       lighter regions of the photograph (projector screen, light clothing),
+       while the angled navy-to-teal wash preserves SI Analytics branding and
+       keeps the text column strongly contrasted. */
     background:
-      linear-gradient(120deg, rgba(15,23,42,.92) 0%, rgba(15,23,42,.72) 45%, rgba(15,118,110,.66) 100%),
+      linear-gradient(180deg, rgba(15,23,42,.38) 0%, rgba(15,23,42,.30) 45%, rgba(15,23,42,.58) 100%),
+      linear-gradient(105deg, rgba(15,23,42,.95) 0%, rgba(15,23,42,.90) 44%, rgba(15,23,42,.68) 68%, rgba(15,118,110,.62) 100%),
       #0F172A;
     color: #fff;
     isolation: isolate;
@@ -442,8 +447,9 @@
     padding-bottom: clamp(5rem, 4rem + 6vw, 8rem);
   }
   .sia-hero-inner { max-width: 760px; }
-  .sia-hero h1 { color: #fff; margin-bottom: .6rem; }
-  .sia-hero-sub { font-size: clamp(1.05rem, 1rem + .5vw, 1.3rem); color: #e2e8f0; margin-bottom: 1.4rem; }
+  .sia-hero h1 { color: #fff; margin-bottom: .6rem; text-shadow: 0 2px 8px rgba(15,23,42,.6); }
+  .sia-hero-sub { font-size: clamp(1.05rem, 1rem + .5vw, 1.3rem); color: #f1f5f9; margin-bottom: 1.4rem; text-shadow: 0 1px 4px rgba(15,23,42,.65); }
+  .sia-hero .sia-eyebrow { text-shadow: 0 1px 3px rgba(15,23,42,.6); }
   .sia-badge {
     display: inline-flex;
     align-items: center;
@@ -466,6 +472,7 @@
     font-weight: 600;
     color: #fff;
     margin-bottom: 1.5rem;
+    text-shadow: 0 1px 4px rgba(15,23,42,.65);
   }
   .sia-hero-date svg { width: 18px; height: 18px; color: var(--sia-gold); }
   .sia-hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-bottom: 1.75rem; }
@@ -474,9 +481,10 @@
     flex-wrap: wrap;
     gap: .5rem .9rem;
     padding-top: 1.25rem;
-    border-top: 1px solid rgba(255,255,255,.18);
-    color: #cbd5e1;
+    border-top: 1px solid rgba(255,255,255,.3);
+    color: #f1f5f9;
     font-size: .9rem;
+    text-shadow: 0 1px 3px rgba(15,23,42,.7);
   }
   .sia-hero-cred li { display: inline-flex; align-items: center; gap: .4rem; list-style: none; }
   .sia-hero-cred svg { width: 15px; height: 15px; color: var(--sia-gold); flex: none; }
@@ -1052,7 +1060,7 @@
         </ul>
 
         <div class="sia-nav-cta">
-          <a class="sia-btn" href="https://www.sianalytics.org/" target="_blank" rel="noopener noreferrer">Enrol Now</a>
+          <a class="sia-btn" href="https://selar.com/o5732q3117" target="_blank" rel="noopener noreferrer">Enrol Now</a>
           <button class="sia-menu-toggle" id="siaMenuToggle" aria-expanded="false" aria-controls="siaNavLinks" aria-label="Open menu">
             <svg class="sia-icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
             <svg class="sia-icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
@@ -1087,7 +1095,7 @@
           </p>
 
           <div class="sia-hero-actions">
-            <a class="sia-btn sia-btn--gold" href="https://www.sianalytics.org/" target="_blank" rel="noopener noreferrer">Enrol Now</a>
+            <a class="sia-btn sia-btn--gold" href="https://selar.com/o5732q3117" target="_blank" rel="noopener noreferrer">Enrol Now</a>
             <a class="sia-btn sia-btn--ghost" href="https://docs.google.com/forms/d/1XzQIh4__Eh3qI3Z6Gj-0kyGeUiNXSxJwhoUO5noNC2Y/preview" target="_blank" rel="noopener noreferrer">Apply for Scholarship</a>
           </div>
 
@@ -1391,7 +1399,7 @@
           <h2>Ready to Build Practical Analytics Capability?</h2>
           <p>Spend six focused weeks working with real datasets, guided by an experienced faculty, and leave with applied skills in R, Power BI and Excel that you can put to work straight away.</p>
           <div class="sia-cta-actions">
-            <a class="sia-btn sia-btn--gold" href="https://www.sianalytics.org/" target="_blank" rel="noopener noreferrer">Enrol Now</a>
+            <a class="sia-btn sia-btn--gold" href="https://selar.com/o5732q3117" target="_blank" rel="noopener noreferrer">Enrol Now</a>
             <a class="sia-btn sia-btn--ghost" href="https://docs.google.com/forms/d/1XzQIh4__Eh3qI3Z6Gj-0kyGeUiNXSxJwhoUO5noNC2Y/preview" target="_blank" rel="noopener noreferrer">Apply for Scholarship</a>
           </div>
         </div>
@@ -1475,7 +1483,7 @@
             </div>
           </div>
           <div class="sia-contact-actions">
-            <a class="sia-btn" href="https://www.sianalytics.org/" target="_blank" rel="noopener noreferrer">Enrol Now</a>
+            <a class="sia-btn" href="https://selar.com/o5732q3117" target="_blank" rel="noopener noreferrer">Enrol Now</a>
             <a class="sia-btn sia-btn--outline" href="https://docs.google.com/forms/d/1XzQIh4__Eh3qI3Z6Gj-0kyGeUiNXSxJwhoUO5noNC2Y/preview" target="_blank" rel="noopener noreferrer">Apply for Scholarship</a>
           </div>
         </div>
@@ -1521,7 +1529,7 @@
           <ul>
             <li><a href="https://www.sianalytics.org/" target="_blank" rel="noopener noreferrer">www.sianalytics.org</a></li>
             <li><a href="mailto:contact@sianalytics.org">contact@sianalytics.org</a></li>
-            <li><a href="https://www.sianalytics.org/" target="_blank" rel="noopener noreferrer">Enrol Now</a></li>
+            <li><a href="https://selar.com/o5732q3117" target="_blank" rel="noopener noreferrer">Enrol Now</a></li>
             <li><a href="https://docs.google.com/forms/d/1XzQIh4__Eh3qI3Z6Gj-0kyGeUiNXSxJwhoUO5noNC2Y/preview" target="_blank" rel="noopener noreferrer">Apply for Scholarship</a></li>
           </ul>
         </div>
@@ -1539,7 +1547,7 @@
 
   <!-- ========================= STICKY MOBILE ENROLMENT BAR ========================= -->
   <div class="sia-mobile-bar" id="siaMobileBar" aria-label="Quick actions">
-    <a class="sia-btn sia-btn--gold" href="https://www.sianalytics.org/" target="_blank" rel="noopener noreferrer">Enrol Now</a>
+    <a class="sia-btn sia-btn--gold" href="https://selar.com/o5732q3117" target="_blank" rel="noopener noreferrer">Enrol Now</a>
     <a class="sia-btn sia-btn--outline" href="https://docs.google.com/forms/d/1XzQIh4__Eh3qI3Z6Gj-0kyGeUiNXSxJwhoUO5noNC2Y/preview" target="_blank" rel="noopener noreferrer">Scholarship</a>
   </div>
 
