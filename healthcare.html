@@ -1,0 +1,1947 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<!--
+==================================================================================
+  SI ANALYTICS COURSE WEBSITE: EDITABLE CONFIGURATION
+==================================================================================
+  This is a standalone, static index.html for GitHub Pages. No build step, no
+  frameworks, no external JS libraries. The values below are the ones an
+  administrator is most likely to update. Search for the marker in brackets.
+
+    [COURSE TITLE]      Healthcare Data Analytics Bootcamp
+    [START DATE]        Sunday, 6 September 2026
+    [END DATE]          Sunday, 11 October 2026
+    [DURATION]          Six weeks
+    [DELIVERY MODE]     Live Virtual Workshops + Self-Paced Learning +
+                        Weekly Assignments + Capstone Project
+    [SOFTWARE]          Microsoft Excel, R Programming and Power BI
+    [FEE]               $150 (retained from the existing website)
+    [EARLY BIRD OFFER]  48 hours (retained from the existing website)
+    [DISCOUNT]          30% (retained from the existing website)
+    [REG DEADLINE]      Not supplied; no deadline is displayed on the page
+    [ENROLMENT URL]     https://selar.com/o5732q3117
+    [SCHOLARSHIP URL]   https://docs.google.com/forms/d/1XzQIh4__Eh3qI3Z6Gj-0kyGeUiNXSxJwhoUO5noNC2Y/preview
+    [CONTACT EMAIL]     contact@sianalytics.org
+    [WEBSITE URL]       https://www.sianalytics.org/
+    [LINKEDIN]          https://www.linkedin.com/company/strategic-insights-analytics-sia
+    [YOUTUBE]           https://www.youtube.com/@SIAnalyticsLab
+    [X / TWITTER]       https://x.com/SIAnalyticsLab
+    [FACEBOOK]          Strategic Insights and Analytics (display name only)
+
+  FACILITATOR DETAILS are in the Facilitators section (id: facilitators).
+  IMAGE URLs are raw GitHub links used inline throughout. Update in place.
+
+  ---------------------------------------------------------------------------------
+  TRANSPARENT ASSUMPTIONS:
+   - The six-week cohort runs from Sunday, 6 September through Sunday,
+     11 October 2026, covering six consecutive weekly workshop dates.
+   - The existing fee, early-bird offer, discount, enrolment URL and scholarship
+     URL are retained because replacements were not supplied.
+   - No registration deadline is displayed because a new deadline was not supplied.
+   - The curriculum for Weeks 2 to 6 has been structured from the stated programme
+     objectives, software, datasets, delivery model and capstone requirement.
+   - No testimonials, enrolment numbers, accreditation claims, guarantees,
+     payment plans or outcome statistics have been invented.
+  ---------------------------------------------------------------------------------
+  FACILITATOR TABS: a single, consistent WAI-ARIA "tabs" pattern is used at all
+  breakpoints (roving tabindex + arrow-key navigation). On narrow screens the tab
+  strip stacks vertically above the panel, preserving accessibility and usability.
+==================================================================================
+-->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0F172A" />
+  <meta name="description" content="Healthcare Data Analytics Bootcamp by SI Analytics. Learn to import, clean, analyse, visualise and communicate healthcare data using Microsoft Excel, R and Power BI. Starts Sunday, 6 September 2026." />
+  <meta name="author" content="Strategic Insights and Analytics (SI Analytics)" />
+
+  <title>Healthcare Data Analytics Bootcamp | SI Analytics</title>
+
+  <!-- Favicon based on the SI Analytics logo -->
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/SIAnalyticsLab/si-analytics-academy/main/assets/logo.png" />
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/SIAnalyticsLab/si-analytics-academy/main/assets/logo.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SI Analytics" />
+  <meta property="og:title" content="Healthcare Data Analytics Bootcamp | SI Analytics" />
+  <meta property="og:description" content="A practical six-week healthcare analytics programme using authentic healthcare datasets, Microsoft Excel, R and Power BI. Starts 6 September 2026." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/SIAnalyticsLab/prelaunch/main/Training_room_class.png" />
+  <meta property="og:url" content="https://www.sianalytics.org/" />
+  <meta property="og:locale" content="en_GB" />
+
+  <!-- Twitter / X card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Healthcare Data Analytics Bootcamp | SI Analytics" />
+  <meta name="twitter:description" content="Build practical healthcare analytics capability with Excel, R, Power BI and authentic healthcare datasets. Starts 6 September 2026." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/SIAnalyticsLab/prelaunch/main/Training_room_class.png" />
+
+  <!-- Preload the hero image for faster first paint -->
+  <link rel="preload" as="image" href="https://raw.githubusercontent.com/SIAnalyticsLab/prelaunch/main/Training_room_class.png" fetchpriority="high" />
+
+  <!-- JSON-LD: Course schema. Only supplied facts are used. No ratings, reviews,
+       attendance, accreditation, address, delivery mode or phone numbers invented. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Healthcare Data Analytics Bootcamp",
+    "description": "A practical six-week programme that equips healthcare and public health professionals to import, clean, manage, analyse, visualise and communicate healthcare data using Microsoft Excel, R and Power BI with authentic healthcare datasets.",
+    "inLanguage": "en-GB",
+    "provider": {
+      "@type": "Organization",
+      "name": "Strategic Insights and Analytics (SI Analytics)",
+      "url": "https://www.sianalytics.org/",
+      "logo": "https://raw.githubusercontent.com/SIAnalyticsLab/si-analytics-academy/main/assets/logo.png",
+      "email": "contact@sianalytics.org",
+      "sameAs": [
+        "https://www.linkedin.com/company/strategic-insights-analytics-sia",
+        "https://www.youtube.com/@SIAnalyticsLab",
+        "https://x.com/SIAnalyticsLab"
+      ]
+    },
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "name": "Healthcare Data Analytics Bootcamp, September to October 2026 cohort",
+      "startDate": "2026-09-06",
+      "endDate": "2026-10-11",
+      "courseMode": "Live virtual workshops, self-paced learning, weekly assignments and capstone project",
+      "location": {
+        "@type": "VirtualLocation",
+        "url": "https://www.sianalytics.org/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "150",
+        "priceCurrency": "USD",
+        "url": "https://selar.com/o5732q3117",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  }
+  </script>
+
+  <style>
+  /* =====================================================================
+     1. RESET AND BASE
+     ===================================================================== */
+  *, *::before, *::after { box-sizing: border-box; }
+  html {
+    scroll-behavior: smooth;
+    /* keep anchored sections clear of the sticky header */
+    scroll-padding-top: 88px;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    margin: 0;
+    background: var(--sia-bg);
+    color: var(--sia-text);
+    font-family: var(--sia-font);
+    font-size: 1rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: var(--sia-teal); }
+  h1, h2, h3, h4 { color: var(--sia-navy); line-height: 1.15; margin: 0 0 .5em; font-weight: 700; letter-spacing: -0.01em; }
+  p { margin: 0 0 1rem; }
+  ul { margin: 0; }
+  :focus-visible {
+    outline: 3px solid var(--sia-teal);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* =====================================================================
+     2. DESIGN TOKENS
+     ===================================================================== */
+  :root {
+    /* Brand palette */
+    --sia-navy: #0F172A;
+    --sia-navy-2: #16233f;
+    --sia-teal: #0F766E;
+    --sia-teal-dark: #0b5a54;
+    --sia-gold: #FACC15;
+    --sia-white: #FFFFFF;
+    --sia-bg: #F8FAFC;
+    --sia-border: #E2E8F0;
+    --sia-text: #334155;
+    --sia-muted: #64748B;
+
+    /* Typography: a robust system stack, no web-font dependency for speed */
+    --sia-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+    /* Spacing scale */
+    --sia-space-1: .5rem;
+    --sia-space-2: 1rem;
+    --sia-space-3: 1.5rem;
+    --sia-space-4: 2rem;
+    --sia-space-5: 3rem;
+    --sia-space-6: 4.5rem;
+
+    /* Radii */
+    --sia-radius-sm: 6px;
+    --sia-radius: 10px;
+    --sia-radius-lg: 16px;
+
+    /* Shadows */
+    --sia-shadow-sm: 0 1px 2px rgba(15,23,42,.06), 0 1px 3px rgba(15,23,42,.05);
+    --sia-shadow: 0 6px 18px rgba(15,23,42,.08);
+    --sia-shadow-lg: 0 20px 45px rgba(15,23,42,.14);
+
+    /* Layout */
+    --sia-max: 1200px;
+    --sia-gutter: clamp(1.1rem, 4vw, 2.25rem);
+    --sia-header-h: 72px;
+  }
+
+  /* =====================================================================
+     3. TYPOGRAPHY (fluid scale)
+     ===================================================================== */
+  .sia-eyebrow {
+    display: inline-block;
+    font-size: .82rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--sia-teal);
+    margin: 0 0 .75rem;
+  }
+  .sia-eyebrow--light { color: var(--sia-gold); }
+  h1 { font-size: clamp(2rem, 1.3rem + 3.4vw, 3.35rem); }
+  h2 { font-size: clamp(1.6rem, 1.15rem + 1.9vw, 2.3rem); }
+  h3 { font-size: clamp(1.15rem, 1rem + .6vw, 1.4rem); }
+  .sia-lead { font-size: clamp(1.05rem, 1rem + .4vw, 1.2rem); color: var(--sia-text); }
+  .sia-muted { color: var(--sia-muted); }
+
+  /* Gold hairline rule: the recurring editorial signature */
+  .sia-rule {
+    width: 54px;
+    height: 3px;
+    background: var(--sia-gold);
+    border: 0;
+    border-radius: 3px;
+    margin: 0 0 1.4rem;
+  }
+  .sia-rule--center { margin-left: auto; margin-right: auto; }
+
+  /* =====================================================================
+     4. LAYOUT
+     ===================================================================== */
+  .sia-container {
+    width: 100%;
+    max-width: var(--sia-max);
+    margin-inline: auto;
+    padding-inline: var(--sia-gutter);
+  }
+  .sia-section { padding-block: clamp(3rem, 2rem + 5vw, 5.5rem); }
+  .sia-section--tight { padding-block: clamp(2rem, 1.5rem + 3vw, 3.5rem); }
+  .sia-section-head { max-width: 760px; margin-bottom: clamp(1.75rem, 1rem + 2vw, 2.75rem); }
+  .sia-section-head--center { margin-inline: auto; text-align: center; }
+
+  .sia-grid { display: grid; gap: clamp(1.25rem, 1rem + 1.5vw, 2rem); }
+  .sia-grid--3 { grid-template-columns: repeat(3, 1fr); }
+  .sia-grid--2 { grid-template-columns: repeat(2, 1fr); }
+
+  /* =====================================================================
+     5. BUTTONS
+     ===================================================================== */
+  .sia-btn {
+    --_bg: var(--sia-teal);
+    --_fg: var(--sia-white);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .55rem;
+    min-height: 48px;
+    padding: .7rem 1.5rem;
+    font: inherit;
+    font-weight: 650;
+    line-height: 1.1;
+    color: var(--_fg);
+    background: var(--_bg);
+    border: 2px solid transparent;
+    border-radius: var(--sia-radius-sm);
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
+  }
+  .sia-btn:hover { background: var(--sia-teal-dark); transform: translateY(-1px); }
+  .sia-btn:active { transform: translateY(0); }
+  .sia-btn--gold {
+    --_bg: var(--sia-gold);
+    --_fg: var(--sia-navy);
+  }
+  .sia-btn--gold:hover { background: #eab308; }
+  .sia-btn--ghost {
+    --_bg: transparent;
+    --_fg: var(--sia-white);
+    border-color: rgba(255,255,255,.55);
+  }
+  .sia-btn--ghost:hover { background: rgba(255,255,255,.12); border-color: #fff; }
+  .sia-btn--outline {
+    --_bg: transparent;
+    --_fg: var(--sia-teal);
+    border-color: var(--sia-teal);
+  }
+  .sia-btn--outline:hover { background: var(--sia-teal); color: #fff; }
+  .sia-btn svg { flex: none; }
+
+  /* =====================================================================
+     6. ACCESSIBILITY HELPERS
+     ===================================================================== */
+  .sia-skip {
+    position: absolute;
+    left: 1rem;
+    top: -60px;
+    z-index: 200;
+    background: var(--sia-navy);
+    color: #fff;
+    padding: .7rem 1.1rem;
+    border-radius: var(--sia-radius-sm);
+    text-decoration: none;
+    transition: top .18s ease;
+  }
+  .sia-skip:focus { top: 1rem; }
+  .sia-visually-hidden {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0);
+    white-space: nowrap; border: 0;
+  }
+
+  /* =====================================================================
+     7. UTILITY BAR
+     ===================================================================== */
+  .sia-utility {
+    background: var(--sia-navy);
+    color: #cbd5e1;
+    font-size: .82rem;
+  }
+  .sia-utility .sia-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 40px;
+    padding-block: .35rem;
+  }
+  .sia-utility a { color: #cbd5e1; text-decoration: none; }
+  .sia-utility a:hover { color: #fff; }
+  .sia-utility-left { display: flex; align-items: center; gap: 1.3rem; flex-wrap: wrap; }
+  .sia-utility-tag {
+    color: var(--sia-gold);
+    font-weight: 600;
+    letter-spacing: .02em;
+  }
+  .sia-utility-social { display: flex; align-items: center; gap: .35rem; }
+  .sia-utility-social a {
+    display: inline-flex;
+    width: 30px; height: 30px;
+    align-items: center; justify-content: center;
+    border-radius: 6px;
+  }
+  .sia-utility-social a:hover { background: rgba(255,255,255,.1); }
+  .sia-utility-social svg { width: 16px; height: 16px; }
+
+  /* =====================================================================
+     8. HEADER AND NAVIGATION
+     ===================================================================== */
+  .sia-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--sia-white);
+    border-bottom: 1px solid var(--sia-border);
+    transition: box-shadow .2s ease;
+  }
+  .sia-header[data-scrolled="true"] { box-shadow: var(--sia-shadow); }
+  .sia-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: var(--sia-header-h);
+  }
+  .sia-brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; }
+  .sia-brand img { height: 40px; width: auto; }
+  .sia-brand-name {
+    font-weight: 750;
+    color: var(--sia-navy);
+    font-size: 1.02rem;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+  .sia-nav-links {
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+    list-style: none;
+    margin: 0; padding: 0;
+  }
+  .sia-nav-links a {
+    display: inline-block;
+    padding: .55rem .7rem;
+    color: var(--sia-navy);
+    text-decoration: none;
+    font-weight: 550;
+    font-size: .95rem;
+    border-radius: 6px;
+    position: relative;
+  }
+  .sia-nav-links a:hover { color: var(--sia-teal); }
+  .sia-nav-links a[aria-current="true"] { color: var(--sia-teal); }
+  .sia-nav-links a[aria-current="true"]::after {
+    content: "";
+    position: absolute;
+    left: .7rem; right: .7rem; bottom: .1rem;
+    height: 2px;
+    background: var(--sia-gold);
+    border-radius: 2px;
+  }
+  .sia-nav-cta { display: flex; align-items: center; gap: .6rem; }
+  .sia-nav-cta .sia-btn { min-height: 44px; padding-block: .55rem; }
+
+  .sia-menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 46px; height: 46px;
+    background: transparent;
+    border: 1px solid var(--sia-border);
+    border-radius: var(--sia-radius-sm);
+    cursor: pointer;
+    color: var(--sia-navy);
+  }
+  .sia-menu-toggle svg { width: 24px; height: 24px; }
+  .sia-menu-toggle .sia-icon-close { display: none; }
+  .sia-menu-toggle[aria-expanded="true"] .sia-icon-open { display: none; }
+  .sia-menu-toggle[aria-expanded="true"] .sia-icon-close { display: block; }
+
+  /* =====================================================================
+     9. HERO
+     ===================================================================== */
+  .sia-hero {
+    position: relative;
+    /* Layered overlay: a full vertical scrim keeps text legible over the
+       lighter regions of the photograph (projector screen, light clothing),
+       while the angled navy-to-teal wash preserves SI Analytics branding and
+       keeps the text column strongly contrasted. */
+    background:
+      linear-gradient(180deg, rgba(15,23,42,.38) 0%, rgba(15,23,42,.30) 45%, rgba(15,23,42,.58) 100%),
+      linear-gradient(105deg, rgba(15,23,42,.95) 0%, rgba(15,23,42,.90) 44%, rgba(15,23,42,.68) 68%, rgba(15,118,110,.62) 100%),
+      #0F172A;
+    color: #fff;
+    isolation: isolate;
+    overflow: hidden;
+  }
+  .sia-hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+  }
+  .sia-hero .sia-container {
+    padding-top: clamp(3rem, 2rem + 5vw, 5rem);
+    padding-bottom: clamp(5rem, 4rem + 6vw, 8rem);
+  }
+  .sia-hero-inner { max-width: 760px; }
+  .sia-hero h1 { color: #fff; margin-bottom: .6rem; text-shadow: 0 2px 8px rgba(15,23,42,.6); }
+  .sia-hero-sub { font-size: clamp(1.05rem, 1rem + .5vw, 1.3rem); color: #f1f5f9; margin-bottom: 1.4rem; text-shadow: 0 1px 4px rgba(15,23,42,.65); }
+  .sia-hero .sia-eyebrow { text-shadow: 0 1px 3px rgba(15,23,42,.6); }
+  .sia-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    background: rgba(250,204,21,.14);
+    border: 1px solid rgba(250,204,21,.55);
+    color: var(--sia-gold);
+    font-weight: 650;
+    font-size: .88rem;
+    letter-spacing: .02em;
+    padding: .4rem .85rem;
+    border-radius: 999px;
+    margin-bottom: 1.3rem;
+  }
+  .sia-badge svg { width: 16px; height: 16px; }
+  .sia-hero-date {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 1px 4px rgba(15,23,42,.65);
+  }
+  .sia-hero-date svg { width: 18px; height: 18px; color: var(--sia-gold); }
+  .sia-hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-bottom: 1.75rem; }
+  .sia-hero-cred {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem .9rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255,255,255,.3);
+    color: #f1f5f9;
+    font-size: .9rem;
+    text-shadow: 0 1px 3px rgba(15,23,42,.7);
+  }
+  .sia-hero-cred li { display: inline-flex; align-items: center; gap: .4rem; list-style: none; }
+  .sia-hero-cred svg { width: 15px; height: 15px; color: var(--sia-gold); flex: none; }
+  .sia-hero-cred ul { display: contents; }
+
+  /* =====================================================================
+     10. OVERLAP INTRO PANEL + CARDS
+     ===================================================================== */
+  .sia-intro { position: relative; margin-top: clamp(-4rem, -3rem - 3vw, -3rem); z-index: 2; }
+  .sia-intro-panel {
+    background: #fff;
+    border: 1px solid var(--sia-border);
+    border-radius: var(--sia-radius-lg);
+    box-shadow: var(--sia-shadow-lg);
+    padding: clamp(1.75rem, 1.25rem + 2vw, 3rem);
+  }
+  .sia-intro-panel p:last-child { margin-bottom: 0; }
+
+  .sia-cards { margin-top: clamp(1.5rem, 1rem + 1.5vw, 2rem); }
+  .sia-card {
+    background: #fff;
+    border: 1px solid var(--sia-border);
+    border-radius: var(--sia-radius);
+    box-shadow: var(--sia-shadow-sm);
+    padding: clamp(1.4rem, 1.1rem + 1vw, 1.9rem);
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+  }
+  .sia-card-icon {
+    width: 44px; height: 44px;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: #ecfdf5;
+    color: var(--sia-teal);
+    border-radius: 10px;
+    margin-bottom: .5rem;
+  }
+  .sia-card-icon svg { width: 22px; height: 22px; }
+  .sia-card h3 { margin-bottom: .1rem; }
+  .sia-card-lead { font-size: 1.28rem; font-weight: 700; color: var(--sia-navy); margin: 0; }
+  .sia-card ul { list-style: none; padding: 0; margin: .35rem 0 0; }
+  .sia-card ul li { position: relative; padding-left: 1.1rem; margin-bottom: .3rem; color: var(--sia-text); }
+  .sia-card ul li::before { content: ""; position: absolute; left: 0; top: .62em; width: 6px; height: 6px; background: var(--sia-teal); border-radius: 50%; }
+  .sia-card--deadline { border-top: 3px solid var(--sia-gold); }
+  .sia-deadline-flag {
+    display: inline-flex; align-items: center; gap: .4rem;
+    align-self: flex-start;
+    background: #fffbeb;
+    color: #854d0e;
+    border: 1px solid #fde68a;
+    font-weight: 650;
+    font-size: .82rem;
+    padding: .3rem .7rem;
+    border-radius: 999px;
+    margin-top: .3rem;
+  }
+  .sia-deadline-flag svg { width: 14px; height: 14px; }
+
+  /* =====================================================================
+     11. OUTCOMES + AUDIENCE
+     ===================================================================== */
+  .sia-check-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .8rem; }
+  .sia-check-list li { display: flex; gap: .7rem; align-items: flex-start; }
+  .sia-check-list svg {
+    flex: none; width: 22px; height: 22px; margin-top: .1rem;
+    color: var(--sia-teal);
+  }
+  .sia-panel {
+    background: #fff;
+    border: 1px solid var(--sia-border);
+    border-radius: var(--sia-radius-lg);
+    padding: clamp(1.5rem, 1.1rem + 1.5vw, 2.4rem);
+    box-shadow: var(--sia-shadow-sm);
+    height: 100%;
+  }
+  .sia-tags { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: .3rem; padding: 0; list-style: none; }
+  .sia-tag {
+    display: inline-block;
+    background: #f1f5f9;
+    border: 1px solid var(--sia-border);
+    color: var(--sia-navy);
+    font-weight: 550;
+    font-size: .9rem;
+    padding: .45rem .85rem;
+    border-radius: 999px;
+  }
+
+  /* Prerequisites notice */
+  .sia-notice {
+    display: flex;
+    gap: .9rem;
+    align-items: flex-start;
+    background: #f0fdfa;
+    border: 1px solid #ccfbf1;
+    border-left: 4px solid var(--sia-teal);
+    border-radius: var(--sia-radius);
+    padding: 1.1rem 1.3rem;
+  }
+  .sia-notice svg { flex: none; width: 24px; height: 24px; color: var(--sia-teal); margin-top: .1rem; }
+  .sia-notice p { margin: 0; }
+  .sia-notice strong { color: var(--sia-navy); }
+
+  /* =====================================================================
+     12. FACILITATORS (tabs pattern at all breakpoints)
+     ===================================================================== */
+  .sia-tabs { display: grid; grid-template-columns: 300px 1fr; gap: clamp(1.25rem, 1rem + 1.5vw, 2rem); }
+  .sia-tablist {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    background: #fff;
+    border: 1px solid var(--sia-border);
+    border-radius: var(--sia-radius);
+    padding: .5rem;
+    box-shadow: var(--sia-shadow-sm);
+    align-self: start;
+  }
+  .sia-tab {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: 0;
+    border-radius: var(--sia-radius-sm);
+    padding: .65rem .7rem;
+    cursor: pointer;
+    color: var(--sia-navy);
+    font: inherit;
+  }
+  .sia-tab:hover { background: #f1f5f9; }
+  .sia-tab[aria-selected="true"] { background: var(--sia-navy); color: #fff; }
+  .sia-tab[aria-selected="true"] .sia-tab-role { color: #cbd5e1; }
+  .sia-tab img {
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    flex: none;
+    border: 2px solid var(--sia-border);
+  }
+  .sia-tab-name { font-weight: 650; font-size: .96rem; line-height: 1.2; }
+  .sia-tab-role { font-size: .8rem; color: var(--sia-muted); line-height: 1.3; }
+
+  .sia-tabpanel {
+    background: #fff;
+    border: 1px solid var(--sia-border);
+    border-radius: var(--sia-radius-lg);
+    box-shadow: var(--sia-shadow-sm);
+    padding: clamp(1.5rem, 1.1rem + 1.5vw, 2.25rem);
+  }
+  .sia-tabpanel[hidden] { display: none; }
+  .sia-fac { display: grid; grid-template-columns: 200px 1fr; gap: clamp(1.25rem, 1rem + 1.5vw, 2rem); align-items: start; }
+  .sia-fac-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: var(--sia-radius);
+    border: 1px solid var(--sia-border);
+    background: #f1f5f9;
+  }
+  .sia-fac h3 { margin-bottom: .15rem; }
+  .sia-fac-role { color: var(--sia-teal); font-weight: 650; margin-bottom: .9rem; }
+  .sia-fac-bio p { color: var(--sia-text); }
+  .sia-fade { animation: sia-fade .3s ease; }
+  @keyframes sia-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+  /* =====================================================================
+     13. CURRICULUM
+     ===================================================================== */
+  .sia-curriculum-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .9rem; }
+  .sia-curriculum-list li {
+    display: flex; gap: .9rem; align-items: flex-start;
+    background: #fff;
+    border: 1px solid var(--sia-border);
+    border-radius: var(--sia-radius);
+    padding: 1rem 1.2rem;
+    box-shadow: var(--sia-shadow-sm);
+  }
+  .sia-num {
+    flex: none;
+    width: 34px; height: 34px;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: var(--sia-navy);
+    color: var(--sia-gold);
+    font-weight: 700;
+    border-radius: 8px;
+    font-size: .95rem;
+  }
+  .sia-curriculum-list li strong { color: var(--sia-navy); font-weight: 650; }
+  .sia-feature-row {
+    margin-top: clamp(1.5rem, 1rem + 1.5vw, 2rem);
+    padding-top: clamp(1.5rem, 1rem + 1.5vw, 2rem);
+    border-top: 1px solid var(--sia-border);
+  }
+  .sia-feature-row p { font-weight: 600; color: var(--sia-navy); margin-bottom: .8rem; }
+  .sia-chips { display: flex; flex-wrap: wrap; gap: .55rem; padding: 0; list-style: none; }
+  .sia-chip {
+    display: inline-flex; align-items: center; gap: .4rem;
+    background: #ecfdf5;
+    border: 1px solid #d1fae5;
+    color: var(--sia-teal-dark);
+    font-weight: 600;
+    font-size: .88rem;
+    padding: .4rem .8rem;
+    border-radius: 8px;
+  }
+  .sia-chip svg { width: 15px; height: 15px; }
+
+  /* =====================================================================
+     14. SCHOLARSHIP
+     ===================================================================== */
+  .sia-scholar { background: var(--sia-navy); color: #e2e8f0; }
+  .sia-scholar h2, .sia-scholar h3 { color: #fff; }
+  .sia-scholar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 1rem + 2vw, 3rem); align-items: center; }
+  .sia-scholar-left p { color: #cbd5e1; font-size: 1.08rem; }
+  .sia-scholar-card {
+    background: var(--sia-navy-2);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: var(--sia-radius-lg);
+    padding: clamp(1.5rem, 1.1rem + 1.5vw, 2.25rem);
+  }
+  .sia-scholar-card ul { list-style: none; padding: 0; margin: 0 0 1.2rem; display: grid; gap: .7rem; }
+  .sia-scholar-card li { display: flex; gap: .7rem; align-items: flex-start; color: #e2e8f0; }
+  .sia-scholar-card svg { flex: none; width: 20px; height: 20px; color: var(--sia-gold); margin-top: .15rem; }
+  .sia-scholar-note {
+    font-size: .95rem;
+    color: #cbd5e1;
+    background: rgba(15,118,110,.28);
+    border: 1px solid rgba(15,118,110,.5);
+    border-radius: var(--sia-radius);
+    padding: .9rem 1.1rem;
+    margin: 0;
+  }
+  .sia-discount-badge {
+    display: inline-flex; align-items: baseline; gap: .5rem;
+    margin-bottom: 1rem;
+  }
+  .sia-discount-badge b { font-size: 2.4rem; color: var(--sia-gold); line-height: 1; }
+  .sia-discount-badge span { color: #cbd5e1; }
+
+  /* =====================================================================
+     15. CONVERSION BANNER
+     ===================================================================== */
+  .sia-cta-banner {
+    position: relative;
+    color: #fff;
+    isolation: isolate;
+    text-align: center;
+    background:
+      linear-gradient(120deg, rgba(15,23,42,.9), rgba(11,90,84,.82)),
+      #0F172A;
+  }
+  .sia-cta-banner img.sia-hero-bg { z-index: -1; }
+  .sia-cta-banner h2 { color: #fff; }
+  .sia-cta-banner p { color: #e2e8f0; max-width: 640px; margin-inline: auto; }
+  .sia-cta-actions { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; margin-top: 1.6rem; }
+
+  /* =====================================================================
+     16. GALLERY (carousel + lightbox)
+     ===================================================================== */
+  .sia-carousel { position: relative; }
+  .sia-carousel-viewport { overflow: hidden; border-radius: var(--sia-radius-lg); }
+  .sia-carousel-track {
+    display: flex;
+    transition: transform .45s ease;
+    will-change: transform;
+  }
+  .sia-slide { flex: 0 0 100%; padding-inline: 6px; box-sizing: border-box; }
+  .sia-slide button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: zoom-in;
+    border-radius: var(--sia-radius);
+    overflow: hidden;
+  }
+  .sia-slide img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--sia-radius);
+    border: 1px solid var(--sia-border);
+    transition: transform .4s ease;
+  }
+  .sia-slide button:hover img { transform: scale(1.03); }
+  .sia-slide figcaption {
+    font-size: .9rem;
+    color: var(--sia-muted);
+    margin-top: .6rem;
+    padding-inline: 6px;
+    text-align: left;
+  }
+  .sia-carousel-btns { display: flex; align-items: center; justify-content: space-between; margin-top: 1.1rem; gap: 1rem; }
+  .sia-carousel-arrows { display: flex; gap: .5rem; }
+  .sia-round-btn {
+    width: 46px; height: 46px;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: #fff;
+    border: 1px solid var(--sia-border);
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--sia-navy);
+    box-shadow: var(--sia-shadow-sm);
+  }
+  .sia-round-btn:hover { background: var(--sia-navy); color: #fff; }
+  .sia-round-btn svg { width: 20px; height: 20px; }
+  .sia-dots { display: flex; gap: .5rem; align-items: center; }
+  .sia-dot {
+    width: 11px; height: 11px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--sia-border);
+    cursor: pointer;
+  }
+  .sia-dot[aria-current="true"] { background: var(--sia-teal); transform: scale(1.15); }
+
+  /* Lightbox */
+  .sia-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 300;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15,23,42,.9);
+    padding: clamp(1rem, 3vw, 2.5rem);
+  }
+  .sia-lightbox[data-open="true"] { display: flex; }
+  .sia-lightbox-inner {
+    position: relative;
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+  }
+  .sia-lightbox img {
+    width: 100%;
+    max-height: 78vh;
+    object-fit: contain;
+    border-radius: var(--sia-radius);
+  }
+  .sia-lightbox figcaption { color: #e2e8f0; margin-top: .9rem; font-size: .95rem; }
+  .sia-lightbox-close {
+    position: absolute;
+    top: -14px; right: -14px;
+    width: 44px; height: 44px;
+    background: #fff; color: var(--sia-navy);
+    border: 0; border-radius: 50%;
+    cursor: pointer;
+    display: inline-flex; align-items: center; justify-content: center;
+    box-shadow: var(--sia-shadow);
+  }
+  .sia-lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px; height: 48px;
+    background: rgba(255,255,255,.9);
+    color: var(--sia-navy);
+    border: 0; border-radius: 50%;
+    cursor: pointer;
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .sia-lightbox-nav:hover { background: #fff; }
+  .sia-lightbox-prev { left: -8px; }
+  .sia-lightbox-next { right: -8px; }
+  .sia-lightbox-nav svg, .sia-lightbox-close svg { width: 22px; height: 22px; }
+
+  /* =====================================================================
+     17. CONTACT
+     ===================================================================== */
+  .sia-contact-card {
+    background: #fff;
+    border: 1px solid var(--sia-border);
+    border-radius: var(--sia-radius-lg);
+    box-shadow: var(--sia-shadow);
+    padding: clamp(1.75rem, 1.25rem + 2vw, 3rem);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+    align-items: center;
+  }
+  .sia-contact-meta { display: grid; gap: .6rem; }
+  .sia-contact-meta a { display: inline-flex; align-items: center; gap: .55rem; color: var(--sia-navy); text-decoration: none; font-weight: 550; }
+  .sia-contact-meta a:hover { color: var(--sia-teal); }
+  .sia-contact-meta svg { width: 20px; height: 20px; color: var(--sia-teal); flex: none; }
+  .sia-contact-actions { display: flex; flex-wrap: wrap; gap: .7rem; }
+
+  /* =====================================================================
+     18. FOOTER
+     ===================================================================== */
+  .sia-footer { background: var(--sia-navy); color: #cbd5e1; }
+  .sia-footer a { color: #cbd5e1; text-decoration: none; }
+  .sia-footer a:hover { color: #fff; }
+  .sia-footer-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1.2fr;
+    gap: clamp(1.5rem, 1rem + 2vw, 3rem);
+    padding-block: clamp(2.5rem, 2rem + 2vw, 4rem);
+  }
+  .sia-footer img { height: 40px; width: auto; margin-bottom: 1rem; background: #fff; padding: 6px 8px; border-radius: 8px; }
+  .sia-footer h4 { color: #fff; font-size: .9rem; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 1rem; }
+  .sia-footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .55rem; }
+  .sia-footer-social { display: flex; gap: .6rem; margin-top: 1rem; }
+  .sia-footer-social a {
+    width: 40px; height: 40px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 8px;
+  }
+  .sia-footer-social a:hover { background: rgba(255,255,255,.1); }
+  .sia-footer-social svg { width: 18px; height: 18px; }
+  .sia-footer-fb { color: #94a3b8; font-size: .92rem; margin-top: .5rem; }
+  .sia-footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.12);
+    padding-block: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: .9rem;
+  }
+  .sia-backtop {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: transparent;
+    color: #cbd5e1;
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: var(--sia-radius-sm);
+    padding: .5rem .9rem;
+    cursor: pointer;
+    font: inherit;
+  }
+  .sia-backtop:hover { background: rgba(255,255,255,.1); color: #fff; }
+  .sia-backtop svg { width: 16px; height: 16px; }
+
+  /* =====================================================================
+     19. STICKY MOBILE ENROLMENT BAR
+     ===================================================================== */
+  .sia-mobile-bar {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 90;
+    display: none;
+    gap: .6rem;
+    padding: .6rem clamp(.75rem, 3vw, 1rem);
+    background: rgba(255,255,255,.97);
+    backdrop-filter: saturate(180%) blur(6px);
+    border-top: 1px solid var(--sia-border);
+    box-shadow: 0 -4px 16px rgba(15,23,42,.1);
+    transform: translateY(120%);
+    transition: transform .28s ease;
+  }
+  .sia-mobile-bar[data-show="true"] { transform: translateY(0); }
+  .sia-mobile-bar .sia-btn { flex: 1; min-height: 46px; padding-inline: .5rem; font-size: .95rem; }
+
+  /* Reveal-on-scroll base state */
+  .sia-reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+  .sia-reveal.sia-in { opacity: 1; transform: none; }
+
+  /* =====================================================================
+     20. RESPONSIVE RULES
+     ===================================================================== */
+  @media (max-width: 980px) {
+    .sia-tabs { grid-template-columns: 1fr; }
+    .sia-tablist { flex-direction: column; }
+    .sia-scholar-grid { grid-template-columns: 1fr; }
+    .sia-footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 860px) {
+    .sia-nav-links, .sia-nav-cta .sia-btn { display: none; }
+    .sia-menu-toggle { display: inline-flex; }
+    /* Mobile menu panel */
+    .sia-nav-links {
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      background: #fff;
+      border-bottom: 1px solid var(--sia-border);
+      box-shadow: var(--sia-shadow);
+      padding: .5rem;
+    }
+    .sia-nav-links[data-open="true"] { display: flex; }
+    .sia-nav-links a { padding: .85rem 1rem; border-radius: 8px; }
+    .sia-nav-links a[aria-current="true"]::after { display: none; }
+    .sia-nav-links a[aria-current="true"] { background: #f1f5f9; }
+    .sia-nav { position: relative; }
+    .sia-grid--3, .sia-grid--2 { grid-template-columns: 1fr; }
+    .sia-mobile-bar { display: flex; }
+    .sia-fac { grid-template-columns: 1fr; }
+    .sia-fac-photo { max-width: 220px; }
+    .sia-contact-card { grid-template-columns: 1fr; }
+    body { padding-bottom: 0; }
+  }
+  @media (max-width: 560px) {
+    .sia-utility-left .sia-utility-hide { display: none; }
+    .sia-footer-grid { grid-template-columns: 1fr; }
+    .sia-brand-name { display: none; }
+    .sia-tab img { width: 40px; height: 40px; }
+  }
+  @media (min-width: 861px) and (max-width: 1024px) {
+    .sia-nav-links a { padding-inline: .5rem; font-size: .9rem; }
+  }
+
+  /* =====================================================================
+     21. ACCESSIBILITY AND REDUCED MOTION
+     ===================================================================== */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: .001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .001ms !important;
+    }
+    .sia-reveal { opacity: 1; transform: none; }
+    .sia-carousel-track { transition: none; }
+  }
+  </style>
+</head>
+<body>
+
+  <!-- ========================= 1. SKIP LINK ========================= -->
+  <a class="sia-skip" href="#main">Skip to main content</a>
+
+  <!-- ========================= 2. UTILITY BAR ========================= -->
+  <div class="sia-utility">
+    <div class="sia-container">
+      <div class="sia-utility-left">
+        <a class="sia-utility-hide" href="mailto:contact@sianalytics.org">contact@sianalytics.org</a>
+        <a class="sia-utility-hide" href="https://www.sianalytics.org/" target="_blank" rel="noopener noreferrer">www.sianalytics.org</a>
+        <span class="sia-utility-tag">Applied Healthcare Analytics Training</span>
+      </div>
+      <div class="sia-utility-social" aria-label="SI Analytics social media">
+        <a href="https://www.linkedin.com/company/strategic-insights-analytics-sia" target="_blank" rel="noopener noreferrer" aria-label="SI Analytics on LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@SIAnalyticsLab" target="_blank" rel="noopener noreferrer" aria-label="SI Analytics on YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.4-.43-5.02a2.62 2.62 0 0 0-1.84-1.85C19.1 4.7 12 4.7 12 4.7s-7.1 0-8.73.43A2.62 2.62 0 0 0 1.43 6.98C1 8.6 1 12 1 12s0 3.4.43 5.02c.24.9.94 1.6 1.84 1.85 1.63.43 8.73.43 8.73.43s7.1 0 8.73-.43a2.62 2.62 0 0 0 1.84-1.85C23 15.4 23 12 23 12zM9.75 15.02V8.98L15 12z"/></svg>
+        </a>
+        <a href="https://x.com/SIAnalyticsLab" target="_blank" rel="noopener noreferrer" aria-label="SI Analytics on X">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.22-6.82-5.97 6.82H1.66l7.73-8.84L1.24 2.25h6.83l4.71 6.23zm-1.16 17.52h1.83L7.01 4.13H5.05z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================= 3. STICKY NAVIGATION ========================= -->
+  <header class="sia-header" id="siaHeader">
+    <div class="sia-container">
+      <nav class="sia-nav" aria-label="Primary">
+        <a class="sia-brand" href="#top" aria-label="SI Analytics home">
+          <img src="https://raw.githubusercontent.com/SIAnalyticsLab/si-analytics-academy/main/assets/logo.png"
+               alt="SI Analytics logo" width="120" height="40" fetchpriority="high" />
+          <span class="sia-brand-name">SI Analytics</span>
+        </a>
+
+        <ul class="sia-nav-links" id="siaNavLinks">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#outcomes">Outcomes</a></li>
+          <li><a href="#curriculum">Curriculum</a></li>
+          <li><a href="#facilitators">Facilitators</a></li>
+          <li><a href="#scholarship">Scholarship</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="sia-nav-cta">
+          <a class="sia-btn" href="https://selar.com/o5732q3117" target="_blank" rel="noopener noreferrer">Enrol Now</a>
+          <button class="sia-menu-toggle" id="siaMenuToggle" aria-expanded="false" aria-controls="siaNavLinks" aria-label="Open menu">
+            <svg class="sia-icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg class="sia-icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <span id="top"></span>
+
+    <!-- ========================= 4. HERO ========================= -->
+    <section class="sia-hero" aria-label="Course introduction">
+      <img class="sia-hero-bg"
+           src="https://raw.githubusercontent.com/SIAnalyticsLab/prelaunch/main/Training_room_class.png"
+           alt="Participants in an SI Analytics healthcare data analytics training session" width="1600" height="900" fetchpriority="high" decoding="async" />
+      <div class="sia-container">
+        <div class="sia-hero-inner">
+          <span class="sia-eyebrow sia-eyebrow--light">Strategic Insights and Analytics</span>
+          <h1>Healthcare Data Analytics Bootcamp</h1>
+          <p class="sia-hero-sub">Transform healthcare data into actionable intelligence with Microsoft Excel, R and Power BI.</p>
+
+          <span class="sia-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 15a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"/><path d="M8.5 13.5 7 22l5-3 5 3-1.5-8.5"/></svg>
+            Six-Week Applied Healthcare Analytics Programme
+          </span>
+
+          <p class="sia-hero-date">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            Starts Sunday, 6 September 2026 · Ends Sunday, 11 October 2026
+          </p>
+
+          <div class="sia-hero-actions">
+            <a class="sia-btn sia-btn--gold" href="https://selar.com/o5732q3117" target="_blank" rel="noopener noreferrer">Enrol Now</a>
+            <a class="sia-btn sia-btn--ghost" href="https://docs.google.com/forms/d/1XzQIh4__Eh3qI3Z6Gj-0kyGeUiNXSxJwhoUO5noNC2Y/preview" target="_blank" rel="noopener noreferrer">Apply for Scholarship</a>
+          </div>
+
+          <ul class="sia-hero-cred" aria-label="Programme highlights">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Authentic healthcare datasets</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Flipped-classroom learning</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Weekly applied assignments</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Healthcare analytics capstone</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= 5 & 6. INTRO PANEL + CARDS ========================= -->
+    <section class="sia-section sia-section--tight" id="overview" aria-label="Programme overview">
+      <div class="sia-container">
+        <div class="sia-intro">
+          <div class="sia-intro-panel sia-reveal">
+            <span class="sia-eyebrow">The Programme</span>
+            <hr class="sia-rule" />
+            <p class="sia-lead">Healthcare organisations generate enormous volumes of data through electronic medical records, insurance claims, health surveys, disease surveillance systems, clinical research and routine facility reporting. Yet many professionals have never been formally trained to transform these datasets into actionable intelligence.</p>
+            <p>The SI Analytics Healthcare Data Analytics Bootcamp is a highly practical, flipped-classroom programme designed to bridge that gap. Learners complete guided pre-work before attending weekly live virtual workshops focused on application, problem-solving and instructor-supported project work.</p>
+            <p>Participants will use authentic healthcare datasets similar to those used by ministries of health, CDC, WHO, USAID-supported programmes, hospitals, NGOs, pharmaceutical organisations and research institutions. Examples span HIV, tuberculosis, malaria, maternal and child health, noncommunicable disease surveillance, population health surveys, hospital utilisation and quality improvement.</p>
+          </div>
+        </div>
+
+        <div class="sia-grid sia-grid--3 sia-cards">
+          <div class="sia-card sia-reveal">
+            <span class="sia-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            </span>
+            <h3>When?</h3>
+            <p class="sia-card-lead">6 September to 11 October 2026</p>
+            <ul><li>Six weeks of structured healthcare analytics learning</li></ul>
+          </div>
+
+          <div class="sia-card sia-reveal">
+            <span class="sia-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </span>
+            <h3>Course Fee</h3>
+            <p class="sia-card-lead">$150</p>
+            <ul>
+              <li>30% discount for early-bird and group enrolments</li>
+              <li>Partial scholarship also available</li>
+            </ul>
+          </div>
+
+          <div class="sia-card sia-reveal">
+            <span class="sia-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4h16v12H4z"/><path d="M8 20h8M12 16v4"/><path d="m9 9 2 2 4-4"/></svg>
+            </span>
+            <h3>Delivery Mode</h3>
+            <p class="sia-card-lead">Live + Self-Paced</p>
+            <ul>
+              <li>Weekly live virtual workshops and guided pre-work</li>
+              <li>Weekly assignments and a capstone project</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= 7. OUTCOMES + AUDIENCE ========================= -->
+    <section class="sia-section" id="outcomes" style="background:#fff;border-block:1px solid var(--sia-border);" aria-label="Learning outcomes and target participants">
+      <div class="sia-container">
+        <div class="sia-grid sia-grid--2">
+          <div class="sia-reveal">
+            <span class="sia-eyebrow">Learning Outcomes</span>
+            <hr class="sia-rule" />
+            <h2>What You Will Gain</h2>
+            <ul class="sia-check-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span>Understand the healthcare data ecosystem and the structure of electronic medical records, claims, surveys, surveillance, clinical research and facility data.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span>Import, organise, clean, validate and manage healthcare datasets using Microsoft Excel and R.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span>Apply descriptive and inferential methods to answer practical clinical, programme and population-health questions.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span>Create clear visualisations and interactive Power BI dashboards for healthcare monitoring and decision support.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span>Build reproducible analytical workflows in R and communicate findings through decision-focused reports and presentations.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span>Interpret healthcare indicators, trends, variation and disparities with appropriate analytical context.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span>Complete an end-to-end healthcare analytics capstone suitable for a professional portfolio.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span>Receive an SI Analytics Certificate of Completion and continued access to learning resources.</span></li>
+            </ul>
+          </div>
+
+          <div class="sia-reveal">
+            <div class="sia-panel">
+              <span class="sia-eyebrow">Who It Is For</span>
+              <hr class="sia-rule" />
+              <h2>Who Should Attend?</h2>
+              <p class="sia-muted">This programme is designed for professionals and graduate learners who need to convert healthcare and public health data into reliable evidence for programmes, research, clinical practice and health-system decision-making.</p>
+              <ul class="sia-tags">
+                <li class="sia-tag">Healthcare Professionals</li>
+                <li class="sia-tag">Epidemiologists</li>
+                <li class="sia-tag">Public Health Practitioners</li>
+                <li class="sia-tag">MEL and M&amp;E Professionals</li>
+                <li class="sia-tag">Strategic Information Officers</li>
+                <li class="sia-tag">Health Informatics Specialists</li>
+                <li class="sia-tag">Public Health Informatics Fellows</li>
+                <li class="sia-tag">Data Managers</li>
+                <li class="sia-tag">Clinical Researchers</li>
+                <li class="sia-tag">Medical Officers</li>
+                <li class="sia-tag">Nurses</li>
+                <li class="sia-tag">Laboratory Scientists</li>
+                <li class="sia-tag">Biostatisticians</li>
+                <li class="sia-tag">NGO Programme Staff</li>
+                <li class="sia-tag">Graduate Students</li>
+                <li class="sia-tag">Health Systems Researchers</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. PREREQUISITES NOTICE -->
+        <div class="sia-notice sia-reveal" style="margin-top:2rem;" role="note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+<p><strong>Prerequisites:</strong> No prior programming experience is required. Participants should have basic computer literacy, access to a functional laptop, reliable internet and the time to complete guided pre-work and weekly assignments.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= 9. FACILITATORS ========================= -->
+    <section class="sia-section" id="facilitators" aria-label="Course facilitators">
+      <div class="sia-container">
+        <div class="sia-section-head sia-reveal">
+          <span class="sia-eyebrow">The Faculty</span>
+          <hr class="sia-rule" />
+          <h2>Course Facilitators</h2>
+          <p class="sia-muted">An experienced faculty spanning epidemiology, public health informatics, biostatistics, data science, R, Power BI and large-scale healthcare analytics. Select a name to read each profile.</p>
+        </div>
+
+        <div class="sia-tabs sia-reveal">
+          <!-- Tab strip -->
+          <div class="sia-tablist" role="tablist" aria-label="Facilitators" aria-orientation="vertical" id="siaTablist">
+            <button class="sia-tab" role="tab" id="fac-tab-0" aria-controls="fac-panel-0" aria-selected="true" tabindex="0">
+              <img src="https://raw.githubusercontent.com/SIAnalyticsLab/si-analytics-academy/main/assets/Tayo%20Asaolu.jpg" alt="Portrait of Tayo Daniel" width="46" height="46" loading="lazy" decoding="async" />
+              <span><span class="sia-tab-name">Tayo Daniel</span><br><span class="sia-tab-role">Lead Instructor</span></span>
+            </button>
+            <button class="sia-tab" role="tab" id="fac-tab-1" aria-controls="fac-panel-1" aria-selected="false" tabindex="-1">
+              <img src="https://raw.githubusercontent.com/SIAnalyticsLab/si-analytics-academy/main/assets/Dr.%20Gbenga%20Asaolu.jpeg" alt="Portrait of Dr Olugbenga Asaolu" width="46" height="46" loading="lazy" decoding="async" />
+              <span><span class="sia-tab-name">Dr Olugbenga Asaolu</span><br><span class="sia-tab-role">Visiting Expert</span></span>
+            </button>
+            <button class="sia-tab" role="tab" id="fac-tab-2" aria-controls="fac-panel-2" aria-selected="false" tabindex="-1">
+              <img src="https://raw.githubusercontent.com/SIAnalyticsLab/si-analytics-academy/main/assets/Emmanuel%20Joseph.png" alt="Portrait of Emmanuel Joseph" width="46" height="46" loading="lazy" decoding="async" />
+              <span><span class="sia-tab-name">Emmanuel Joseph</span><br><span class="sia-tab-role">Power BI Instructor</span></span>
+            </button>
+            <button class="sia-tab" role="tab" id="fac-tab-3" aria-controls="fac-panel-3" aria-selected="false" tabindex="-1">
+              <img src="https://raw.githubusercontent.com/SIAnalyticsLab/si-analytics-academy/main/assets/Dr%20Elysee.png" alt="Portrait of Dr Elysee Tuyishime" width="46" height="46" loading="lazy" decoding="async" />
+              <span><span class="sia-tab-name">Dr Elysee Tuyishime</span><br><span class="sia-tab-role">Data Visualisation Leader</span></span>
+            </button>
+            <button class="sia-tab" role="tab" id="fac-tab-4" aria-controls="fac-panel-4" aria-selected="false" tabindex="-1">
+              <img src="https://raw.githubusercontent.com/SIAnalyticsLab/si-analytics-academy/main/assets/Mike%20Sileshi.png" alt="Portrait of Michael Sileshi Mekbib" width="46" height="46" loading="lazy" decoding="async" />
+              <span><span class="sia-tab-name">Michael Sileshi Mekbib</span><br><span class="sia-tab-role">Power BI and DAX Expert</span></span>
+            </button>
+          </div>
+
+          <!-- Panels -->
+          <div>
+            <div class="sia-tabpanel" role="tabpanel" id="fac-panel-0" aria-labelledby="fac-tab-0" tabindex="0">
+              <div class="sia-fac">
+                <img class="sia-fac-photo" src="https://raw.githubusercontent.com/SIAnalyticsLab/si-analytics-academy/main/assets/Tayo%20Asaolu.jpg" alt="Tayo Daniel, Lead Instructor for Python, R and Power BI" width="400" height="400" loading="lazy" decoding="async" />
+                <div class="sia-fac-bio">
+                  <h3>Tayo Daniel, MBA, PhD (c)</h3>
+                  <p class="sia-fac-role">Lead Instructor, Python, R and Power BI</p>
+                  <p>Tayo Daniel brings 13 years of technology experience and eight years of applied data analytics, using Python, R, Power BI, SQL, and machine learning to solve real-world business and public health problems.</p>
+                  <p>He combines technical depth with enterprise leadership and training experience spanning business intelligence, predictive analytics, global health research, and the development of production-ready software products.</p>
+                  <a class="sia-btn sia-btn--outline" href="https://www.linkedin.com/in/tayoasaolu" target="_blank" rel="noopener noreferrer" aria-label="View Tayo Daniel on LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg>
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="sia-tabpanel" role="tabpanel" id="fac-panel-1" aria-labelledby="fac-tab-1" tabindex="0" hidden>
+              <div class="sia-fac">
+                <img class="sia-fac-photo" src="https://raw.githubusercontent.com/SIAnalyticsLab/si-analytics-academy/main/assets/Dr.%20Gbenga%20Asaolu.jpeg" alt="Dr Olugbenga Asaolu, Visiting Python, R and Power BI Expert" width="400" height="400" loading="lazy" decoding="async" />
+                <div class="sia-fac-bio">
+                  <h3>Dr Olugbenga Asaolu</h3>
+                  <p class="sia-fac-role">Visiting Python, R and Power BI Expert</p>
+                  <p>Dr Olugbenga Asaolu brings more than 14 years of international experience across the United Nations system, USAID, and the U.S. Centers for Disease Control and Prevention, applying epidemiology, data science, and public health informatics across Africa and the United States.</p>
+                  <p>He uses Python, R, and Power BI to convert complex health and programme data into scalable analytical workflows, predictive models, and executive decision-support dashboards, while mentoring professionals to apply analytics to real-world public health and development challenges.</p>
+                  <a class="sia-btn sia-btn--outline" href="https://www.linkedin.com/in/dr-olugbenga-asaolu" target="_blank" rel="noopener noreferrer" aria-label="View Dr Olugbenga Asaolu on LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg>
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="sia-tabpanel" role="tabpanel" id="fac-panel-2" aria-labelledby="fac-tab-2" tabindex="0" hidden>
+              <div class="sia-fac">
+                <img class="sia-fac-photo" src="https://raw.githubusercontent.com/SIAnalyticsLab/si-analytics-academy/main/assets/Emmanuel%20Joseph.png" alt="Emmanuel Joseph, Power BI Instructor" width="400" height="400" loading="lazy" decoding="async" />
+                <div class="sia-fac-bio">
+                  <h3>Emmanuel Joseph</h3>
+                  <p class="sia-fac-role">Power BI Instructor</p>
+                  <p>Emmanuel Joseph combines strong academic distinction with frontline public health analytics experience, serving as a Strategic Information Specialist and applying data to strengthen reporting, performance monitoring, and evidence-based decision-making.</p>
+                  <p>He translates complex Power BI concepts into practical, learner-ready solutions, guiding participants from data preparation and modelling through to advanced dashboard design and actionable insight generation.</p>
+                  <a class="sia-btn sia-btn--outline" href="https://www.linkedin.com/in/emmanuel-joseph-97924b169/" target="_blank" rel="noopener noreferrer" aria-label="View Emmanuel Joseph on LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg>
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="sia-tabpanel" role="tabpanel" id="fac-panel-3" aria-labelledby="fac-tab-3" tabindex="0" hidden>
+              <div class="sia-fac">
+                <img class="sia-fac-photo" src="https://raw.githubusercontent.com/SIAnalyticsLab/si-analytics-academy/main/assets/Dr%20Elysee.png" alt="Dr Elysee Tuyishime, Power BI Expert and Data Visualisation Leader" width="400" height="400" loading="lazy" decoding="async" />
+                <div class="sia-fac-bio">
+                  <h3>Dr Elysee Tuyishime</h3>
+                  <p class="sia-fac-role">Power BI Expert and Data Visualisation Leader</p>
+                  <p>Dr Elysee Tuyishime brings more than 12 years of experience across data science, biostatistics, epidemiology, and public health informatics, supported by a PhD in Data Science and peer-reviewed research in HIV epidemiology, population estimation, and advanced statistical methods.</p>
+                  <p>He transforms complex analytical methods into clear, decision-ready visual insights, equipping professionals to build rigorous Power BI dashboards and communicate evidence to a global standard.</p>
+                  <a class="sia-btn sia-btn--outline" href="https://www.linkedin.com/in/elysee-tuyishime/" target="_blank" rel="noopener noreferrer" aria-label="View Dr Elysee Tuyishime on LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg>
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="sia-tabpanel" role="tabpanel" id="fac-panel-4" aria-labelledby="fac-tab-4" tabindex="0" hidden>
+              <div class="sia-fac">
+                <img class="sia-fac-photo" src="https://raw.githubusercontent.com/SIAnalyticsLab/si-analytics-academy/main/assets/Mike%20Sileshi.png" alt="Michael Sileshi Mekbib, Power BI and DAX Expert" width="400" height="400" loading="lazy" decoding="async" />
+                <div class="sia-fac-bio">
+                  <h3>Michael Sileshi Mekbib</h3>
+                  <p class="sia-fac-role">Power BI and DAX Expert</p>
+                  <p>Michael Sileshi Mekbib brings more than 13 years of experience transforming complex public health data into decision-ready intelligence, including digital surveillance, immunisation, and emergency-response systems implemented across national programmes and 55 African Union Member States.</p>
+                  <p>He combines advanced Power BI, DAX, data modelling, and visualisation expertise with large-scale implementation experience, enabling learners to build robust analytical models, dynamic measures, and high-performance dashboards for real-world decision-making.</p>
+                  <a class="sia-btn sia-btn--outline" href="https://www.linkedin.com/in/michaelsileshi/" target="_blank" rel="noopener noreferrer" aria-label="View Michael Sileshi Mekbib on LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg>
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= 10. CURRICULUM ========================= -->
+    <section class="sia-section" id="curriculum" style="background:#fff;border-block:1px solid var(--sia-border);" aria-label="Course curriculum">
+      <div class="sia-container">
+        <div class="sia-section-head sia-reveal">
+          <span class="sia-eyebrow">Six-Week Curriculum</span>
+          <hr class="sia-rule" />
+          <h2>Healthcare Data Analytics Learning Pathway</h2>
+          <p class="sia-muted">A progressive, applied curriculum that moves from healthcare data foundations to reproducible analysis, interactive reporting and a decision-ready capstone project.</p>
+        </div>
+
+        <div class="sia-reveal">
+          <ol class="sia-curriculum-list sia-grid--2" style="grid-template-columns:repeat(2,1fr);">
+            <li><span class="sia-num">1</span><span><strong>Foundations of Healthcare Data Analytics.</strong> Introduction to healthcare analytics and the healthcare data ecosystem; types of healthcare data; understanding claims data; introduction to R and the RStudio workflow; data import; healthcare variables and data types; reproducible analysis.</span></li>
+            <li><span class="sia-num">2</span><span><strong>Healthcare Data Management in Excel and R.</strong> Importing EMR, claims, survey, surveillance and facility data; data-quality assessment; missing data; recoding and validation; cleaning, reshaping and joining datasets; building transparent analytical workflows.</span></li>
+            <li><span class="sia-num">3</span><span><strong>Descriptive Epidemiology and Statistical Analysis.</strong> Frequencies, proportions, rates and summary measures; stratified analysis; cross-tabulation; trends and variation; confidence intervals; selecting and interpreting statistical methods for healthcare questions.</span></li>
+            <li><span class="sia-num">4</span><span><strong>Healthcare Data Visualisation and Evidence Communication.</strong> Visualising health indicators in R; selecting appropriate charts; communicating trends, comparisons and disparities; producing reproducible analytical reports and decision-focused narratives.</span></li>
+            <li><span class="sia-num">5</span><span><strong>Power BI for Healthcare Intelligence.</strong> Power Query, data modelling, relationships and DAX measures; building healthcare KPIs, filters, maps and interactive dashboards; designing clear views for programme and executive decision-making.</span></li>
+            <li><span class="sia-num">6</span><span><strong>Capstone Project and Decision-Ready Presentation.</strong> Complete an end-to-end analysis using an authentic healthcare dataset; integrate data preparation, analysis, visualisation and interpretation; present a polished dashboard or analytical report with actionable recommendations.</span></li>
+          </ol>
+
+          <div class="sia-feature-row">
+            <p>Software, datasets and applied learning experiences include:</p>
+            <ul class="sia-chips">
+              <li class="sia-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Microsoft Excel</li>
+              <li class="sia-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>R Programming</li>
+              <li class="sia-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Power BI</li>
+              <li class="sia-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Electronic Medical Records</li>
+              <li class="sia-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Insurance Claims</li>
+              <li class="sia-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Health Surveys</li>
+              <li class="sia-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Disease Surveillance</li>
+              <li class="sia-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Clinical Research Data</li>
+              <li class="sia-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Facility Reporting Data</li>
+              <li class="sia-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Weekly Assignments</li>
+              <li class="sia-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Capstone Project</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= 11. SCHOLARSHIP ========================= -->
+    <section class="sia-section sia-scholar" id="scholarship" aria-label="Partial scholarship">
+      <div class="sia-container">
+        <div class="sia-scholar-grid">
+          <div class="sia-scholar-left sia-reveal">
+            <span class="sia-eyebrow sia-eyebrow--light">Funding Support</span>
+            <hr class="sia-rule" />
+            <h2>Partial Scholarship</h2>
+            <div class="sia-discount-badge"><b>30%</b><span>off the course fee for eligible applicants</span></div>
+            <p>Eligible applicants receive 30% off the course fee. Applicants who meet the criteria should complete the scholarship application form.</p>
+            <a class="sia-btn sia-btn--gold" href="https://docs.google.com/forms/d/1XzQIh4__Eh3qI3Z6Gj-0kyGeUiNXSxJwhoUO5noNC2Y/preview" target="_blank" rel="noopener noreferrer">Apply for Scholarship</a>
+          </div>
+
+          <div class="sia-scholar-card sia-reveal">
+            <h3>Scholarship Eligibility</h3>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Applicants must be between 22 and 35 years old.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Applicants must satisfy the residency requirement stated in the application form.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Applicants must demonstrate a clear interest in data analysis.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Applicants must have access to a functional laptop and reliable internet.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Applicants must be able to commit fully to the programme.</span></li>
+            </ul>
+            <p class="sia-scholar-note">Applications are welcomed from healthcare professionals, epidemiologists, public health practitioners, health informatics specialists, M&amp;E and strategic information professionals, researchers, clinicians, data managers, graduate students and other health-sector professionals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= 12. CONVERSION BANNER ========================= -->
+    <section class="sia-section sia-cta-banner" aria-label="Enrolment call to action">
+      <img class="sia-hero-bg" src="https://raw.githubusercontent.com/SIAnalyticsLab/prelaunch/main/award_certificate.png" alt="An SI Analytics participant receiving a certificate of completion" width="1600" height="900" loading="lazy" decoding="async" />
+      <div class="sia-container">
+        <div class="sia-reveal">
+          <hr class="sia-rule sia-rule--center" />
+          <h2>Ready to Turn Healthcare Data into Actionable Intelligence?</h2>
+          <p>Spend six focused weeks working with authentic healthcare datasets, guided by an experienced faculty, and build practical capability in Microsoft Excel, R and Power BI that you can apply to programmes, research, clinical services and health-system decision-making.</p>
+          <div class="sia-cta-actions">
+            <a class="sia-btn sia-btn--gold" href="https://selar.com/o5732q3117" target="_blank" rel="noopener noreferrer">Enrol Now</a>
+            <a class="sia-btn sia-btn--ghost" href="https://docs.google.com/forms/d/1XzQIh4__Eh3qI3Z6Gj-0kyGeUiNXSxJwhoUO5noNC2Y/preview" target="_blank" rel="noopener noreferrer">Apply for Scholarship</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= 13. GALLERY ========================= -->
+    <section class="sia-section" id="gallery" aria-label="Training gallery">
+      <div class="sia-container">
+        <div class="sia-section-head sia-reveal">
+          <span class="sia-eyebrow">In the Room</span>
+          <hr class="sia-rule" />
+          <h2>Training Gallery</h2>
+          <p class="sia-muted">Moments from SI Analytics training sessions and cohorts. Select an image to view it larger.</p>
+        </div>
+
+        <div class="sia-carousel sia-reveal" id="siaCarousel">
+          <div class="sia-carousel-viewport">
+            <div class="sia-carousel-track" id="siaTrack" aria-live="polite">
+              <!-- Slides injected/managed by JS; markup present for no-JS readability -->
+              <figure class="sia-slide">
+                <button type="button" data-index="0" aria-label="Open larger image: SI Analytics participant receiving a certificate">
+                  <img src="https://raw.githubusercontent.com/SIAnalyticsLab/prelaunch/main/award_certificate.png" alt="SI Analytics participant receiving a certificate" width="800" height="600" loading="lazy" decoding="async" />
+                </button>
+                <figcaption>SI Analytics participant receiving a certificate</figcaption>
+              </figure>
+              <figure class="sia-slide">
+                <button type="button" data-index="1" aria-label="Open larger image: Participants working during an applied analytics session">
+                  <img src="https://raw.githubusercontent.com/SIAnalyticsLab/prelaunch/main/Training_room.png" alt="Participants working during an applied analytics session" width="800" height="600" loading="lazy" decoding="async" />
+                </button>
+                <figcaption>Participants working during an applied analytics session</figcaption>
+              </figure>
+              <figure class="sia-slide">
+                <button type="button" data-index="2" aria-label="Open larger image: Learners engaged in a facilitator-led training session">
+                  <img src="https://raw.githubusercontent.com/SIAnalyticsLab/prelaunch/main/Training_room_class.png" alt="Learners engaged in a facilitator-led training session" width="800" height="600" loading="lazy" decoding="async" />
+                </button>
+                <figcaption>Learners engaged in a facilitator-led training session</figcaption>
+              </figure>
+              <figure class="sia-slide">
+                <button type="button" data-index="3" aria-label="Open larger image: SI Analytics training cohort group photograph">
+                  <img src="https://raw.githubusercontent.com/SIAnalyticsLab/prelaunch/main/group_pics%20of%20thos%20trained.png" alt="SI Analytics training cohort group photograph" width="800" height="600" loading="lazy" decoding="async" />
+                </button>
+                <figcaption>SI Analytics training cohort group photograph</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="sia-carousel-btns">
+            <div class="sia-dots" id="siaDots" role="tablist" aria-label="Choose a gallery slide"></div>
+            <div class="sia-carousel-arrows">
+              <button class="sia-round-btn" id="siaPrev" aria-label="Previous slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button class="sia-round-btn" id="siaNext" aria-label="Next slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+          <p class="sia-visually-hidden" id="siaCarouselStatus" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= 14. CONTACT ========================= -->
+    <section class="sia-section sia-section--tight" id="contact" style="background:#fff;border-top:1px solid var(--sia-border);" aria-label="Contact and enrolment">
+      <div class="sia-container">
+        <div class="sia-contact-card sia-reveal">
+          <div>
+            <span class="sia-eyebrow">Get In Touch</span>
+            <hr class="sia-rule" />
+            <h2 style="margin-bottom:1rem;">Enrol in the Healthcare Data Analytics Bootcamp</h2>
+            <div class="sia-contact-meta">
+              <a href="https://www.sianalytics.org/" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></svg>
+                www.sianalytics.org
+              </a>
+              <a href="mailto:contact@sianalytics.org">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+                contact@sianalytics.org
+              </a>
+            </div>
+          </div>
+          <div class="sia-contact-actions">
+            <a class="sia-btn" href="https://selar.com/o5732q3117" target="_blank" rel="noopener noreferrer">Enrol Now</a>
+            <a class="sia-btn sia-btn--outline" href="https://docs.google.com/forms/d/1XzQIh4__Eh3qI3Z6Gj-0kyGeUiNXSxJwhoUO5noNC2Y/preview" target="_blank" rel="noopener noreferrer">Apply for Scholarship</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================= 15. FOOTER ========================= -->
+  <footer class="sia-footer">
+    <div class="sia-container">
+      <div class="sia-footer-grid">
+        <div>
+          <img src="https://raw.githubusercontent.com/SIAnalyticsLab/si-analytics-academy/main/assets/logo.png" alt="SI Analytics logo" width="120" height="40" loading="lazy" />
+          <p>Strategic Insights and Analytics develops practical healthcare and data-analytics capability through applied training, mentorship and evidence-focused learning.</p>
+          <div class="sia-footer-social" aria-label="SI Analytics social media">
+            <a href="https://www.linkedin.com/company/strategic-insights-analytics-sia" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@SIAnalyticsLab" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.4-.43-5.02a2.62 2.62 0 0 0-1.84-1.85C19.1 4.7 12 4.7 12 4.7s-7.1 0-8.73.43A2.62 2.62 0 0 0 1.43 6.98C1 8.6 1 12 1 12s0 3.4.43 5.02c.24.9.94 1.6 1.84 1.85 1.63.43 8.73.43 8.73.43s7.1 0 8.73-.43a2.62 2.62 0 0 0 1.84-1.85C23 15.4 23 12 23 12zM9.75 15.02V8.98L15 12z"/></svg>
+            </a>
+            <a href="https://x.com/SIAnalyticsLab" target="_blank" rel="noopener noreferrer" aria-label="X">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.22-6.82-5.97 6.82H1.66l7.73-8.84L1.24 2.25h6.83l4.71 6.23zm-1.16 17.52h1.83L7.01 4.13H5.05z"/></svg>
+            </a>
+          </div>
+          <p class="sia-footer-fb">Facebook: Strategic Insights and Analytics</p>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#outcomes">Outcomes</a></li>
+            <li><a href="#curriculum">Curriculum</a></li>
+            <li><a href="#facilitators">Facilitators</a></li>
+            <li><a href="#scholarship">Scholarship</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="https://www.sianalytics.org/" target="_blank" rel="noopener noreferrer">www.sianalytics.org</a></li>
+            <li><a href="mailto:contact@sianalytics.org">contact@sianalytics.org</a></li>
+            <li><a href="https://selar.com/o5732q3117" target="_blank" rel="noopener noreferrer">Enrol Now</a></li>
+            <li><a href="https://docs.google.com/forms/d/1XzQIh4__Eh3qI3Z6Gj-0kyGeUiNXSxJwhoUO5noNC2Y/preview" target="_blank" rel="noopener noreferrer">Apply for Scholarship</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sia-footer-bottom">
+        <p style="margin:0;">&copy; <span id="siaYear">2026</span> Strategic Insights and Analytics. All rights reserved.</p>
+        <button class="sia-backtop" id="siaBackTop" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+          Back to top
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================= STICKY MOBILE ENROLMENT BAR ========================= -->
+  <div class="sia-mobile-bar" id="siaMobileBar" aria-label="Quick actions">
+    <a class="sia-btn sia-btn--gold" href="https://selar.com/o5732q3117" target="_blank" rel="noopener noreferrer">Enrol Now</a>
+    <a class="sia-btn sia-btn--outline" href="https://docs.google.com/forms/d/1XzQIh4__Eh3qI3Z6Gj-0kyGeUiNXSxJwhoUO5noNC2Y/preview" target="_blank" rel="noopener noreferrer">Scholarship</a>
+  </div>
+
+  <!-- ========================= LIGHTBOX ========================= -->
+  <div class="sia-lightbox" id="siaLightbox" role="dialog" aria-modal="true" aria-label="Image viewer" data-open="false">
+    <div class="sia-lightbox-inner">
+      <button class="sia-lightbox-close" id="siaLbClose" aria-label="Close image viewer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <button class="sia-lightbox-nav sia-lightbox-prev" id="siaLbPrev" aria-label="Previous image">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <figure style="margin:0;">
+        <img id="siaLbImg" src="" alt="" />
+        <figcaption id="siaLbCaption"></figcaption>
+      </figure>
+      <button class="sia-lightbox-nav sia-lightbox-next" id="siaLbNext" aria-label="Next image">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <script>
+  /* =====================================================================
+     JS is organised into small named init functions, called on load.
+     All content remains readable if JavaScript does not run.
+     ===================================================================== */
+  (function () {
+    "use strict";
+    var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    /* ---------- Sticky header shadow after scroll ---------- */
+    function initStickyHeader() {
+      var header = document.getElementById("siaHeader");
+      if (!header) return;
+      function update() {
+        header.setAttribute("data-scrolled", window.scrollY > 8 ? "true" : "false");
+      }
+      update();
+      window.addEventListener("scroll", update, { passive: true });
+    }
+
+    /* ---------- Mobile menu ---------- */
+    function initMobileMenu() {
+      var toggle = document.getElementById("siaMenuToggle");
+      var links = document.getElementById("siaNavLinks");
+      if (!toggle || !links) return;
+
+      function open() {
+        links.setAttribute("data-open", "true");
+        toggle.setAttribute("aria-expanded", "true");
+        toggle.setAttribute("aria-label", "Close menu");
+        document.body.style.overflow = "hidden";
+      }
+      function close() {
+        links.removeAttribute("data-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open menu");
+        document.body.style.overflow = "";
+      }
+      toggle.addEventListener("click", function () {
+        toggle.getAttribute("aria-expanded") === "true" ? close() : open();
+      });
+      links.addEventListener("click", function (e) {
+        if (e.target.closest("a")) close();
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+          close();
+          toggle.focus();
+        }
+      });
+    }
+
+    /* ---------- Scroll spy: highlight active nav link ---------- */
+    function initScrollSpy() {
+      var links = Array.prototype.slice.call(document.querySelectorAll(".sia-nav-links a"));
+      var map = {};
+      links.forEach(function (a) {
+        var id = a.getAttribute("href").slice(1);
+        var sec = document.getElementById(id);
+        if (sec) map[id] = a;
+      });
+      var sections = Object.keys(map).map(function (id) { return document.getElementById(id); });
+      if (!("IntersectionObserver" in window) || !sections.length) return;
+
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            links.forEach(function (a) { a.removeAttribute("aria-current"); });
+            var active = map[entry.target.id];
+            if (active) active.setAttribute("aria-current", "true");
+          }
+        });
+      }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+      sections.forEach(function (s) { io.observe(s); });
+    }
+
+    /* ---------- Reveal on scroll ---------- */
+    function initReveal() {
+      var els = Array.prototype.slice.call(document.querySelectorAll(".sia-reveal"));
+      if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+        els.forEach(function (el) { el.classList.add("sia-in"); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("sia-in");
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(function (el) { io.observe(el); });
+    }
+
+    /* ---------- Facilitator tabs (roving tabindex + arrow keys) ---------- */
+    function initFacilitatorTabs() {
+      var tablist = document.getElementById("siaTablist");
+      if (!tablist) return;
+      var tabs = Array.prototype.slice.call(tablist.querySelectorAll('[role="tab"]'));
+
+      function select(tab, focusTab) {
+        tabs.forEach(function (t) {
+          var selected = t === tab;
+          t.setAttribute("aria-selected", selected ? "true" : "false");
+          t.tabIndex = selected ? 0 : -1;
+          var panel = document.getElementById(t.getAttribute("aria-controls"));
+          if (panel) {
+            panel.hidden = !selected;
+            if (selected && !prefersReducedMotion) {
+              panel.classList.remove("sia-fade");
+              void panel.offsetWidth;
+              panel.classList.add("sia-fade");
+            }
+          }
+        });
+        if (focusTab) tab.focus();
+      }
+
+      tabs.forEach(function (tab, i) {
+        tab.addEventListener("click", function () { select(tab, false); });
+        tab.addEventListener("keydown", function (e) {
+          var idx = i;
+          if (e.key === "ArrowDown" || e.key === "ArrowRight") { idx = (i + 1) % tabs.length; }
+          else if (e.key === "ArrowUp" || e.key === "ArrowLeft") { idx = (i - 1 + tabs.length) % tabs.length; }
+          else if (e.key === "Home") { idx = 0; }
+          else if (e.key === "End") { idx = tabs.length - 1; }
+          else { return; }
+          e.preventDefault();
+          select(tabs[idx], true);
+        });
+      });
+    }
+
+    /* ---------- Gallery carousel ---------- */
+    var carouselApi = null;
+    function initCarousel() {
+      var root = document.getElementById("siaCarousel");
+      var track = document.getElementById("siaTrack");
+      var prev = document.getElementById("siaPrev");
+      var next = document.getElementById("siaNext");
+      var dotsWrap = document.getElementById("siaDots");
+      var status = document.getElementById("siaCarouselStatus");
+      if (!root || !track) return;
+
+      var slides = Array.prototype.slice.call(track.children);
+      var total = slides.length;
+      var index = 0;
+      var timer = null;
+      var paused = false;
+
+      function perView() {
+        var w = window.innerWidth;
+        if (w >= 1024) return Math.min(3, total);
+        if (w >= 640) return Math.min(2, total);
+        return 1;
+      }
+
+      function maxIndex() { return Math.max(0, total - perView()); }
+
+      function render() {
+        var pv = perView();
+        slides.forEach(function (s) { s.style.flexBasis = (100 / pv) + "%"; });
+        if (index > maxIndex()) index = maxIndex();
+        track.style.transform = "translateX(-" + (index * (100 / pv)) + "%)";
+        buildDots();
+        if (status) status.textContent = "Slide " + (index + 1) + " of " + (maxIndex() + 1);
+      }
+
+      function buildDots() {
+        if (!dotsWrap) return;
+        var count = maxIndex() + 1;
+        dotsWrap.innerHTML = "";
+        for (var d = 0; d < count; d++) {
+          (function (d) {
+            var b = document.createElement("button");
+            b.className = "sia-dot";
+            b.type = "button";
+            b.setAttribute("aria-label", "Go to slide group " + (d + 1));
+            if (d === index) b.setAttribute("aria-current", "true");
+            b.addEventListener("click", function () { goTo(d); restart(); });
+            dotsWrap.appendChild(b);
+          })(d);
+        }
+      }
+
+      function goTo(i) {
+        var mi = maxIndex();
+        index = i < 0 ? mi : (i > mi ? 0 : i);
+        render();
+      }
+      function nextSlide() { goTo(index + 1); }
+      function prevSlide() { goTo(index - 1); }
+
+      function play() {
+        if (prefersReducedMotion || paused) return;
+        stop();
+        timer = window.setInterval(function () {
+          if (!document.hidden) nextSlide();
+        }, 5000);
+      }
+      function stop() { if (timer) { window.clearInterval(timer); timer = null; } }
+      function restart() { stop(); play(); }
+
+      if (next) next.addEventListener("click", function () { nextSlide(); restart(); });
+      if (prev) prev.addEventListener("click", function () { prevSlide(); restart(); });
+
+      root.addEventListener("mouseenter", function () { paused = true; stop(); });
+      root.addEventListener("mouseleave", function () { paused = false; play(); });
+      root.addEventListener("focusin", function () { paused = true; stop(); });
+      root.addEventListener("focusout", function () {
+        if (!root.contains(document.activeElement)) { paused = false; play(); }
+      });
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) stop(); else play();
+      });
+
+      root.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowRight") { e.preventDefault(); nextSlide(); restart(); }
+        else if (e.key === "ArrowLeft") { e.preventDefault(); prevSlide(); restart(); }
+      });
+
+      /* Touch / swipe */
+      var startX = 0, dragging = false;
+      track.addEventListener("touchstart", function (e) { startX = e.touches[0].clientX; dragging = true; stop(); }, { passive: true });
+      track.addEventListener("touchend", function (e) {
+        if (!dragging) return;
+        dragging = false;
+        var dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 40) { dx < 0 ? nextSlide() : prevSlide(); }
+        restart();
+      }, { passive: true });
+
+      window.addEventListener("resize", render);
+      render();
+      play();
+
+      carouselApi = { total: total, slides: slides };
+    }
+
+    /* ---------- Lightbox ---------- */
+    function initLightbox() {
+      var lb = document.getElementById("siaLightbox");
+      var img = document.getElementById("siaLbImg");
+      var cap = document.getElementById("siaLbCaption");
+      var closeBtn = document.getElementById("siaLbClose");
+      var prevBtn = document.getElementById("siaLbPrev");
+      var nextBtn = document.getElementById("siaLbNext");
+      var triggers = Array.prototype.slice.call(document.querySelectorAll(".sia-slide button"));
+      if (!lb || !img || !triggers.length) return;
+
+      var data = triggers.map(function (btn) {
+        var im = btn.querySelector("img");
+        return { src: im.getAttribute("src"), alt: im.getAttribute("alt") };
+      });
+      var current = 0;
+      var lastFocused = null;
+
+      function show(i) {
+        current = (i + data.length) % data.length;
+        img.src = data[current].src;
+        img.alt = data[current].alt;
+        cap.textContent = data[current].alt;
+      }
+      function openLb(i, trigger) {
+        lastFocused = trigger || document.activeElement;
+        show(i);
+        lb.setAttribute("data-open", "true");
+        document.body.style.overflow = "hidden";
+        closeBtn.focus();
+        document.addEventListener("keydown", onKey);
+      }
+      function closeLb() {
+        lb.setAttribute("data-open", "false");
+        document.body.style.overflow = "";
+        document.removeEventListener("keydown", onKey);
+        if (lastFocused && typeof lastFocused.focus === "function") lastFocused.focus();
+      }
+      function onKey(e) {
+        if (e.key === "Escape") { closeLb(); return; }
+        if (e.key === "ArrowRight") { show(current + 1); return; }
+        if (e.key === "ArrowLeft") { show(current - 1); return; }
+        if (e.key === "Tab") {
+          /* Focus trap within the lightbox */
+          var focusable = [closeBtn, prevBtn, nextBtn];
+          var first = focusable[0], last = focusable[focusable.length - 1];
+          if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+      }
+
+      triggers.forEach(function (btn, i) {
+        btn.addEventListener("click", function () { openLb(i, btn); });
+      });
+      closeBtn.addEventListener("click", closeLb);
+      prevBtn.addEventListener("click", function () { show(current - 1); });
+      nextBtn.addEventListener("click", function () { show(current + 1); });
+      lb.addEventListener("click", function (e) { if (e.target === lb) closeLb(); });
+    }
+
+    /* ---------- Back to top ---------- */
+    function initBackTop() {
+      var btn = document.getElementById("siaBackTop");
+      if (!btn) return;
+      btn.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
+        var brand = document.querySelector(".sia-brand");
+        if (brand) brand.focus({ preventScroll: true });
+      });
+    }
+
+    /* ---------- Sticky mobile enrolment bar ---------- */
+    function initMobileBar() {
+      var bar = document.getElementById("siaMobileBar");
+      var hero = document.querySelector(".sia-hero");
+      var footer = document.querySelector(".sia-footer");
+      if (!bar || !hero) return;
+
+      function update() {
+        var pastHero = window.scrollY > (hero.offsetTop + hero.offsetHeight - 120);
+        var footerTop = footer ? footer.getBoundingClientRect().top : Infinity;
+        var footerVisible = footerTop < window.innerHeight;
+        bar.setAttribute("data-show", (pastHero && !footerVisible) ? "true" : "false");
+      }
+      update();
+      window.addEventListener("scroll", update, { passive: true });
+      window.addEventListener("resize", update);
+    }
+
+    /* ---------- Dynamic copyright year ---------- */
+    function initYear() {
+      var el = document.getElementById("siaYear");
+      if (el) el.textContent = new Date().getFullYear();
+    }
+
+    /* ---------- Boot ---------- */
+    function boot() {
+      initStickyHeader();
+      initMobileMenu();
+      initScrollSpy();
+      initReveal();
+      initFacilitatorTabs();
+      initCarousel();
+      initLightbox();
+      initBackTop();
+      initMobileBar();
+      initYear();
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", boot);
+    } else {
+      boot();
+    }
+  })();
+  </script>
+</body>
+</html>
